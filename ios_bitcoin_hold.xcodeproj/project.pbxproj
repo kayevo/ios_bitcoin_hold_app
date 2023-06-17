@@ -1,0 +1,582 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		256764C12A3E6E7E00CE4AE5 /* ios_bitcoin_holdApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256764C02A3E6E7E00CE4AE5 /* ios_bitcoin_holdApp.swift */; };
+		256764C32A3E6E7E00CE4AE5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256764C22A3E6E7E00CE4AE5 /* ContentView.swift */; };
+		256764C52A3E6E7F00CE4AE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 256764C42A3E6E7F00CE4AE5 /* Assets.xcassets */; };
+		256764C82A3E6E7F00CE4AE5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 256764C72A3E6E7F00CE4AE5 /* Preview Assets.xcassets */; };
+		256764D22A3E6E8000CE4AE5 /* ios_bitcoin_holdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256764D12A3E6E8000CE4AE5 /* ios_bitcoin_holdTests.swift */; };
+		256764DC2A3E6E8000CE4AE5 /* ios_bitcoin_holdUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256764DB2A3E6E8000CE4AE5 /* ios_bitcoin_holdUITests.swift */; };
+		256764DE2A3E6E8000CE4AE5 /* ios_bitcoin_holdUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256764DD2A3E6E8000CE4AE5 /* ios_bitcoin_holdUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		256764CE2A3E6E8000CE4AE5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 256764B52A3E6E7E00CE4AE5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 256764BC2A3E6E7E00CE4AE5;
+			remoteInfo = ios_bitcoin_hold;
+		};
+		256764D82A3E6E8000CE4AE5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 256764B52A3E6E7E00CE4AE5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 256764BC2A3E6E7E00CE4AE5;
+			remoteInfo = ios_bitcoin_hold;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		256764BD2A3E6E7E00CE4AE5 /* ios_bitcoin_hold.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_bitcoin_hold.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		256764C02A3E6E7E00CE4AE5 /* ios_bitcoin_holdApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_bitcoin_holdApp.swift; sourceTree = "<group>"; };
+		256764C22A3E6E7E00CE4AE5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		256764C42A3E6E7F00CE4AE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		256764C72A3E6E7F00CE4AE5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		256764CD2A3E6E8000CE4AE5 /* ios_bitcoin_holdTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ios_bitcoin_holdTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		256764D12A3E6E8000CE4AE5 /* ios_bitcoin_holdTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_bitcoin_holdTests.swift; sourceTree = "<group>"; };
+		256764D72A3E6E8000CE4AE5 /* ios_bitcoin_holdUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ios_bitcoin_holdUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		256764DB2A3E6E8000CE4AE5 /* ios_bitcoin_holdUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_bitcoin_holdUITests.swift; sourceTree = "<group>"; };
+		256764DD2A3E6E8000CE4AE5 /* ios_bitcoin_holdUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_bitcoin_holdUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		256764BA2A3E6E7E00CE4AE5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		256764CA2A3E6E8000CE4AE5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		256764D42A3E6E8000CE4AE5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		256764B42A3E6E7D00CE4AE5 = {
+			isa = PBXGroup;
+			children = (
+				256764BF2A3E6E7E00CE4AE5 /* ios_bitcoin_hold */,
+				256764D02A3E6E8000CE4AE5 /* ios_bitcoin_holdTests */,
+				256764DA2A3E6E8000CE4AE5 /* ios_bitcoin_holdUITests */,
+				256764BE2A3E6E7E00CE4AE5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		256764BE2A3E6E7E00CE4AE5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				256764BD2A3E6E7E00CE4AE5 /* ios_bitcoin_hold.app */,
+				256764CD2A3E6E8000CE4AE5 /* ios_bitcoin_holdTests.xctest */,
+				256764D72A3E6E8000CE4AE5 /* ios_bitcoin_holdUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		256764BF2A3E6E7E00CE4AE5 /* ios_bitcoin_hold */ = {
+			isa = PBXGroup;
+			children = (
+				256764C02A3E6E7E00CE4AE5 /* ios_bitcoin_holdApp.swift */,
+				256764C22A3E6E7E00CE4AE5 /* ContentView.swift */,
+				256764C42A3E6E7F00CE4AE5 /* Assets.xcassets */,
+				256764C62A3E6E7F00CE4AE5 /* Preview Content */,
+			);
+			path = ios_bitcoin_hold;
+			sourceTree = "<group>";
+		};
+		256764C62A3E6E7F00CE4AE5 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				256764C72A3E6E7F00CE4AE5 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		256764D02A3E6E8000CE4AE5 /* ios_bitcoin_holdTests */ = {
+			isa = PBXGroup;
+			children = (
+				256764D12A3E6E8000CE4AE5 /* ios_bitcoin_holdTests.swift */,
+			);
+			path = ios_bitcoin_holdTests;
+			sourceTree = "<group>";
+		};
+		256764DA2A3E6E8000CE4AE5 /* ios_bitcoin_holdUITests */ = {
+			isa = PBXGroup;
+			children = (
+				256764DB2A3E6E8000CE4AE5 /* ios_bitcoin_holdUITests.swift */,
+				256764DD2A3E6E8000CE4AE5 /* ios_bitcoin_holdUITestsLaunchTests.swift */,
+			);
+			path = ios_bitcoin_holdUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		256764BC2A3E6E7E00CE4AE5 /* ios_bitcoin_hold */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 256764E12A3E6E8000CE4AE5 /* Build configuration list for PBXNativeTarget "ios_bitcoin_hold" */;
+			buildPhases = (
+				256764B92A3E6E7E00CE4AE5 /* Sources */,
+				256764BA2A3E6E7E00CE4AE5 /* Frameworks */,
+				256764BB2A3E6E7E00CE4AE5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ios_bitcoin_hold;
+			productName = ios_bitcoin_hold;
+			productReference = 256764BD2A3E6E7E00CE4AE5 /* ios_bitcoin_hold.app */;
+			productType = "com.apple.product-type.application";
+		};
+		256764CC2A3E6E8000CE4AE5 /* ios_bitcoin_holdTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 256764E42A3E6E8000CE4AE5 /* Build configuration list for PBXNativeTarget "ios_bitcoin_holdTests" */;
+			buildPhases = (
+				256764C92A3E6E8000CE4AE5 /* Sources */,
+				256764CA2A3E6E8000CE4AE5 /* Frameworks */,
+				256764CB2A3E6E8000CE4AE5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				256764CF2A3E6E8000CE4AE5 /* PBXTargetDependency */,
+			);
+			name = ios_bitcoin_holdTests;
+			productName = ios_bitcoin_holdTests;
+			productReference = 256764CD2A3E6E8000CE4AE5 /* ios_bitcoin_holdTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		256764D62A3E6E8000CE4AE5 /* ios_bitcoin_holdUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 256764E72A3E6E8000CE4AE5 /* Build configuration list for PBXNativeTarget "ios_bitcoin_holdUITests" */;
+			buildPhases = (
+				256764D32A3E6E8000CE4AE5 /* Sources */,
+				256764D42A3E6E8000CE4AE5 /* Frameworks */,
+				256764D52A3E6E8000CE4AE5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				256764D92A3E6E8000CE4AE5 /* PBXTargetDependency */,
+			);
+			name = ios_bitcoin_holdUITests;
+			productName = ios_bitcoin_holdUITests;
+			productReference = 256764D72A3E6E8000CE4AE5 /* ios_bitcoin_holdUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		256764B52A3E6E7E00CE4AE5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					256764BC2A3E6E7E00CE4AE5 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					256764CC2A3E6E8000CE4AE5 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 256764BC2A3E6E7E00CE4AE5;
+					};
+					256764D62A3E6E8000CE4AE5 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 256764BC2A3E6E7E00CE4AE5;
+					};
+				};
+			};
+			buildConfigurationList = 256764B82A3E6E7E00CE4AE5 /* Build configuration list for PBXProject "ios_bitcoin_hold" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 256764B42A3E6E7D00CE4AE5;
+			productRefGroup = 256764BE2A3E6E7E00CE4AE5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				256764BC2A3E6E7E00CE4AE5 /* ios_bitcoin_hold */,
+				256764CC2A3E6E8000CE4AE5 /* ios_bitcoin_holdTests */,
+				256764D62A3E6E8000CE4AE5 /* ios_bitcoin_holdUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		256764BB2A3E6E7E00CE4AE5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				256764C82A3E6E7F00CE4AE5 /* Preview Assets.xcassets in Resources */,
+				256764C52A3E6E7F00CE4AE5 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		256764CB2A3E6E8000CE4AE5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		256764D52A3E6E8000CE4AE5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		256764B92A3E6E7E00CE4AE5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				256764C32A3E6E7E00CE4AE5 /* ContentView.swift in Sources */,
+				256764C12A3E6E7E00CE4AE5 /* ios_bitcoin_holdApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		256764C92A3E6E8000CE4AE5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				256764D22A3E6E8000CE4AE5 /* ios_bitcoin_holdTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		256764D32A3E6E8000CE4AE5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				256764DE2A3E6E8000CE4AE5 /* ios_bitcoin_holdUITestsLaunchTests.swift in Sources */,
+				256764DC2A3E6E8000CE4AE5 /* ios_bitcoin_holdUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		256764CF2A3E6E8000CE4AE5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 256764BC2A3E6E7E00CE4AE5 /* ios_bitcoin_hold */;
+			targetProxy = 256764CE2A3E6E8000CE4AE5 /* PBXContainerItemProxy */;
+		};
+		256764D92A3E6E8000CE4AE5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 256764BC2A3E6E7E00CE4AE5 /* ios_bitcoin_hold */;
+			targetProxy = 256764D82A3E6E8000CE4AE5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		256764DF2A3E6E8000CE4AE5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		256764E02A3E6E8000CE4AE5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		256764E22A3E6E8000CE4AE5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ios_bitcoin_hold/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "kayevo.ios-bitcoin-hold";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		256764E32A3E6E8000CE4AE5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ios_bitcoin_hold/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "kayevo.ios-bitcoin-hold";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		256764E52A3E6E8000CE4AE5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "kayevo.ios-bitcoin-holdTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ios_bitcoin_hold.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ios_bitcoin_hold";
+			};
+			name = Debug;
+		};
+		256764E62A3E6E8000CE4AE5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "kayevo.ios-bitcoin-holdTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ios_bitcoin_hold.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ios_bitcoin_hold";
+			};
+			name = Release;
+		};
+		256764E82A3E6E8000CE4AE5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "kayevo.ios-bitcoin-holdUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ios_bitcoin_hold;
+			};
+			name = Debug;
+		};
+		256764E92A3E6E8000CE4AE5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "kayevo.ios-bitcoin-holdUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ios_bitcoin_hold;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		256764B82A3E6E7E00CE4AE5 /* Build configuration list for PBXProject "ios_bitcoin_hold" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				256764DF2A3E6E8000CE4AE5 /* Debug */,
+				256764E02A3E6E8000CE4AE5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		256764E12A3E6E8000CE4AE5 /* Build configuration list for PBXNativeTarget "ios_bitcoin_hold" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				256764E22A3E6E8000CE4AE5 /* Debug */,
+				256764E32A3E6E8000CE4AE5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		256764E42A3E6E8000CE4AE5 /* Build configuration list for PBXNativeTarget "ios_bitcoin_holdTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				256764E52A3E6E8000CE4AE5 /* Debug */,
+				256764E62A3E6E8000CE4AE5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		256764E72A3E6E8000CE4AE5 /* Build configuration list for PBXNativeTarget "ios_bitcoin_holdUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				256764E82A3E6E8000CE4AE5 /* Debug */,
+				256764E92A3E6E8000CE4AE5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 256764B52A3E6E7E00CE4AE5 /* Project object */;
+}
