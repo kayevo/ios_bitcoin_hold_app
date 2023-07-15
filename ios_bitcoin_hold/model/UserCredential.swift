@@ -6,5 +6,4 @@ class UserCredential{
         self.email = email
         self.password = password
     }
-
 }
