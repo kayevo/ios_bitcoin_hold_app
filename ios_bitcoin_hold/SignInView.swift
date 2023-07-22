@@ -46,7 +46,6 @@ struct SignInView: View {
         }
     }
     func authenticateUser(username: String, password: String) -> Bool{
-        // comm
         return true
     }
 }
