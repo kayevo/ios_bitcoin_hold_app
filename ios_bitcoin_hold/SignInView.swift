@@ -1,7 +1,7 @@
 import SwiftUI
 import Combine
 
-struct ContentView: View {
+struct SignInView: View {
     @State private var email = ""
     @State private var password = ""
     @State private var wrongUsername = ""
@@ -51,8 +51,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct ContentyouView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        SignInView()
     }
 }

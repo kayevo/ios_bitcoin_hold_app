@@ -11,7 +11,7 @@ import SwiftUI
 struct ios_bitcoin_holdApp: App {
     var body: some Scene {
         WindowGroup {            
-            ContentView()
+            SignInView()
         }
     }
 }

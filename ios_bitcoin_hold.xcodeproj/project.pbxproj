@@ -12,7 +12,7 @@
 		251C98E22A63362E00DB69BD /* MockSignInServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251C98E12A63362E00DB69BD /* MockSignInServiceImpl.swift */; };
 		251C98E62A63467300DB69BD /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251C98E52A63467300DB69BD /* SignInViewModel.swift */; };
 		256764C12A3E6E7E00CE4AE5 /* ios_bitcoin_holdApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256764C02A3E6E7E00CE4AE5 /* ios_bitcoin_holdApp.swift */; };
-		256764C32A3E6E7E00CE4AE5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256764C22A3E6E7E00CE4AE5 /* ContentView.swift */; };
+		256764C32A3E6E7E00CE4AE5 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256764C22A3E6E7E00CE4AE5 /* SignInView.swift */; };
 		256764C52A3E6E7F00CE4AE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 256764C42A3E6E7F00CE4AE5 /* Assets.xcassets */; };
 		256764C82A3E6E7F00CE4AE5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 256764C72A3E6E7F00CE4AE5 /* Preview Assets.xcassets */; };
 		256764D22A3E6E8000CE4AE5 /* ios_bitcoin_holdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256764D12A3E6E8000CE4AE5 /* ios_bitcoin_holdTests.swift */; };
@@ -44,7 +44,7 @@
 		251C98E52A63467300DB69BD /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		256764BD2A3E6E7E00CE4AE5 /* ios_bitcoin_hold.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_bitcoin_hold.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		256764C02A3E6E7E00CE4AE5 /* ios_bitcoin_holdApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_bitcoin_holdApp.swift; sourceTree = "<group>"; };
-		256764C22A3E6E7E00CE4AE5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		256764C22A3E6E7E00CE4AE5 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		256764C42A3E6E7F00CE4AE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		256764C72A3E6E7F00CE4AE5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		256764CD2A3E6E8000CE4AE5 /* ios_bitcoin_holdTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ios_bitcoin_holdTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,7 +140,7 @@
 				251C98DD2A6335D400DB69BD /* service */,
 				251C98D72A63346800DB69BD /* model */,
 				256764C02A3E6E7E00CE4AE5 /* ios_bitcoin_holdApp.swift */,
-				256764C22A3E6E7E00CE4AE5 /* ContentView.swift */,
+				256764C22A3E6E7E00CE4AE5 /* SignInView.swift */,
 				256764C42A3E6E7F00CE4AE5 /* Assets.xcassets */,
 				256764C62A3E6E7F00CE4AE5 /* Preview Content */,
 			);
@@ -305,7 +305,7 @@
 				251C98E22A63362E00DB69BD /* MockSignInServiceImpl.swift in Sources */,
 				251C98E02A63360B00DB69BD /* SignInService.swift in Sources */,
 				251C98E62A63467300DB69BD /* SignInViewModel.swift in Sources */,
-				256764C32A3E6E7E00CE4AE5 /* ContentView.swift in Sources */,
+				256764C32A3E6E7E00CE4AE5 /* SignInView.swift in Sources */,
 				251C98D92A63346800DB69BD /* UserCredential.swift in Sources */,
 				256764C12A3E6E7E00CE4AE5 /* ios_bitcoin_holdApp.swift in Sources */,
 			);
