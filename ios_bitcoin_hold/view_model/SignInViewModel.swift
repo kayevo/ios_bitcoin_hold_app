@@ -3,20 +3,25 @@ import Combine
 
 class SignInViewModel: ObservableObject{
     @Published var userSignIn = false
-    let userService: SignInService
+    let signInService: SignInService
     var cancellables = Set<AnyCancellable>()
     
-    init(userService: SignInService){
-        self.userService = userService
+    init(signInService: SignInService){
+        self.signInService = signInService
     }
     
     func signIn(email: String, password: String){
-        return userService.signIn(credential: UserCredential(email: email, password: password))
+        let userCredential = UserCredential(email: email, password: password)
+        return signInService.signIn(credential: userCredential)
             .sink{
                 _ in
             } receiveValue:{ [weak self] resultUserSignIn in
                 self?.userSignIn = resultUserSignIn
             }
             .store(in: &cancellables)
+    }
+    
+    func validateEmail(email: String) -> Bool{
+        return email.count > 4
     }
 }

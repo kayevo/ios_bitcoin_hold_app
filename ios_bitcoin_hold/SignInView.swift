@@ -2,9 +2,9 @@ import SwiftUI
 import Combine
 
 class TextValidator: ObservableObject {
-
+    
     @Published var text = ""
-
+    
 }
 
 struct SignInView: View {
@@ -13,7 +13,7 @@ struct SignInView: View {
     @State private var wrongUsername = ""
     @State private var wrongPassword = ""
     @State private var logged = false
-    @StateObject private var signInViewModel = SignInViewModel(userService: MockSignInServiceImpl())
+    @StateObject private var signInViewModel = SignInViewModel(signInService: MockSignInServiceImpl())
     @StateObject private var textValidator = TextValidator()
     
     
@@ -35,31 +35,12 @@ struct SignInView: View {
                         .frame(width: 300, height: 50)
                         .background()
                         .cornerRadius(10)
-                    /*
-                    TextField("E-mail", text: $textValidator.text)
+                    SecureField("Password", text: $password)
                         .padding()
                         .frame(width: 300, height: 50)
                         .background()
                         .cornerRadius(10)
-                        .onReceive(Just(textValidator.text)){ newValue in
-                            if(newValue)
-                            
-                        }
-                    
-                     Text("E-mail validator")
-                        .font(.title3)
-                        .foregroundColor(Color(white: 1))
-                     */
-                     SecureField("Password", text: $password)
-                        .padding()
-                        .frame(width: 300, height: 50)
-                        .background()
-                        .cornerRadius(10)
-                    /*Text("Password validator")
-                        .font(.title3)
-                        .foregroundColor(Color(white: 1))
-                    */
-                     Button("SignIn"){
+                    Button("SignIn"){
                         signInViewModel.signIn(email: email, password: password)
                         logged = signInViewModel.userSignIn
                     }
