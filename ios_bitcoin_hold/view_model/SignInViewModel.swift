@@ -21,7 +21,11 @@ class SignInViewModel: ObservableObject{
             .store(in: &cancellables)
     }
     
-    func validateEmail(email: String) -> Bool{
+    func mockValidateEmail(email: String) -> Bool{
         return email.count > 4
+    }
+    
+    func mockValidatePassword(password: String) -> Bool{
+        return password.count > 4
     }
 }
