@@ -24,64 +24,66 @@ struct SignInView: View {
     }
     
     var body: some View {
-        NavigationView{
-            ZStack {
-                Color(primaryLightBlue)
-                    .ignoresSafeArea()
-                Form {
-                    Section(header: Text("Sign in")) {
-                        TextField("E-mail", text: $email)
-                            .onChange(of: email) { newEmail in
-                                if(signInViewModel.mockValidateEmail(email: newEmail)){
-                                    hintEmail = "Valid e-mail"
-                                }else{
-                                    hintEmail = "Invalid e-mail"
-                                }
-                            }
-                        if(hintEmail != "Valid e-mail"){
-                            Text("Invalid e-mail address")
-                                .foregroundColor(.red)
-                        }
-                        SecureField("Password", text: $password)
-                            .onChange(of: password) { newPassword in
-                                if(signInViewModel.mockValidatePassword(password: newPassword)){
-                                    hintPassword = "Valid password"
-                                }else{
-                                    hintPassword = "Invalid password"
-                                }
-                            }
-                        if(hintPassword != "Valid password"){
-                            Text("Password have less than 4 characteres")
-                                .foregroundColor(.red)
+        VStack(alignment: .center) {
+            Spacer()
+            Text("Sign in").foregroundColor(Color(primaryGreen)).font(.title)
+            Form {
+                TextField("E-mail", text: $email)
+                    .onChange(of: email) { newEmail in
+                        if(signInViewModel.mockValidateEmail(email: newEmail)){
+                            hintEmail = "Valid e-mail"
+                        }else{
+                            hintEmail = "Invalid e-mail"
                         }
                     }
+                if(hintEmail != "Valid e-mail"){
+                    Text("Invalid e-mail address")
+                        .foregroundColor(.red)
                 }
-                .scrollContentBackground(.hidden)
-                .navigationTitle("Sign in")
-                Button("Sign In"){
-                    signInViewModel.signIn(email: email, password: password)
-                }
-                .onReceive(signInViewModel.$userSignIn) { isUserSignIn in
-                    if (isUserSignIn) {
-                        print("Sign in")
-                        logged = isUserSignIn
-                    } else {
-                        print("Dont sign in")
+                SecureField("Password", text: $password)
+                    .onChange(of: password) { newPassword in
+                        if(signInViewModel.mockValidatePassword(password: newPassword)){
+                            hintPassword = "Valid password"
+                        }else{
+                            hintPassword = "Invalid password"
+                        }
                     }
-                }
-                .frame(maxWidth: .infinity)
-                .padding()
-                .background(Color(primaryGreen))
-                .foregroundColor(Color(primaryLightBlue))
-                .cornerRadius(10)
-                .padding(.top, -80)
-                .padding(.horizontal, 20)
-                .disabled(hintEmail != "Valid e-mail" || hintPassword != "Valid password")
-                NavigationLink(destination: Text("Signed in"), isActive: $logged){
-                    EmptyView()
+                if(hintPassword != "Valid password"){
+                    Text("Password have less than 4 characteres")
+                        .foregroundColor(.red)
                 }
             }
+            .navigationBarTitle("Sign in", displayMode: .large)
+            .scrollContentBackground(.hidden)
+            .frame(width: .infinity, height: 300)
+            .padding(.horizontal, -20)
+            Button(action: {
+                signInViewModel.signIn(email: email, password: password)
+                print("TEST 1")
+            }) {
+                Text("Sign in")
+                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                    .padding(.vertical)
+                    .background(Color(primaryGreen))
+                    .foregroundColor(Color(primaryLightBlue))
+                    .cornerRadius(10)
+            }
+            .onReceive(signInViewModel.$userSignIn) { isUserSignIn in
+                if (isUserSignIn) {
+                    print("Sign in")
+                    logged = isUserSignIn
+                } else {
+                    print("Dont sign in")
+                }
+            }
+            .disabled(hintEmail != "Valid e-mail" || hintPassword != "Valid password")
+            NavigationLink(destination: Text("Signed in"), isActive: $logged){
+                EmptyView()
+            }
+            Spacer()
         }
+        .padding(20)
+        .background(Color(primaryLightBlue))
     }
 }
 
