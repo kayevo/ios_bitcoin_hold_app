@@ -1,8 +1,8 @@
 import Foundation
 import Combine
 
-class SignInViewModel: ObservableObject{
-    @Published var isUserSignedIn = false
+class SignUpViewModel: ObservableObject{
+    @Published var isUserSignedUp = false
     let loginService: LoginService
     var cancellables = Set<AnyCancellable>()
     
@@ -10,13 +10,13 @@ class SignInViewModel: ObservableObject{
         self.loginService = loginService
     }
     
-    func signIn(email: String, password: String){
+    func signUp(email: String, password: String){
         let userCredential = UserCredential(email: email, password: password)
-        return loginService.signIn(credential: userCredential)
+        return loginService.signUp(credential: userCredential)
             .sink{
                 _ in
-            } receiveValue:{ [weak self] resultUserSignIn in
-                self?.isUserSignedIn = resultUserSignIn
+            } receiveValue:{ [weak self] result in
+                self?.isUserSignedUp = result
             }
             .store(in: &cancellables)
     }

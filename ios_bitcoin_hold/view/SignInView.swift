@@ -6,26 +6,17 @@ struct SignInView: View {
     @State private var hintEmail = ""
     @State private var password = ""
     @State private var hintPassword = ""
-    @State private var logged: Bool = false
-    @StateObject private var signInViewModel = SignInViewModel(signInService: MockSignInServiceImpl())
+    @State private var isUserSignedIn: Bool = false
+    @StateObject private var signInViewModel = SignInViewModel(loginService: MockLoginServiceImpl())
     let primaryDarkBlue = UIColor(red: 0.16, green: 0.19, blue: 0.24, alpha: 1)
     let primaryLightBlue = UIColor(red: 0.2, green: 0.24, blue: 0.29, alpha: 1)
     let primaryGreen = UIColor(red: 0.1, green: 0.77, blue: 0.51, alpha: 1)
-    
-    init() {
-        UINavigationBar
-            .appearance()
-            .largeTitleTextAttributes = [.foregroundColor: primaryGreen] // Change the color of title navigationbar
-    }
     
     var body: some View {
         NavigationView{
             VStack(alignment: .center) {
                 Spacer()
-                HStack(){
-                    Text("Sign in").foregroundColor(Color(primaryGreen)).font(.title)
-                    Spacer()
-                }
+                Text("Sign in").foregroundColor(Color(primaryGreen)).font(.title)
                 Form {
                     TextField("E-mail", text: $email)
                         .onChange(of: email) { newEmail in
@@ -57,7 +48,6 @@ struct SignInView: View {
                 .padding(.horizontal, -20)
                 Button(action: {
                     signInViewModel.signIn(email: email, password: password)
-                    print("TEST 1")
                 }) {
                     Text("Sign in")
                         .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
@@ -66,18 +56,25 @@ struct SignInView: View {
                         .foregroundColor(Color(primaryLightBlue))
                         .cornerRadius(10)
                 }
-                .onReceive(signInViewModel.$userSignIn) { isUserSignIn in
-                    if (isUserSignIn) {
-                        logged = isUserSignIn
+                .onReceive(signInViewModel.$isUserSignedIn) { isUserSignedIn in
+                    if (isUserSignedIn) {
+                        self.isUserSignedIn = isUserSignedIn
                     } else {
                         print("Dont sign in")
                     }
                 }
                 .disabled(hintEmail != "Valid e-mail" || hintPassword != "Valid password")
                 .navigationBarBackButtonHidden(true)
-                .fullScreenCover(isPresented: $logged) {
+                .fullScreenCover(isPresented: $isUserSignedIn) {
                     PortfolioView()
                 }
+                NavigationLink(destination: {
+                    SignUpView()
+                }, label: {
+                    Text("Click to Sign Up")    .padding(.vertical)
+                        .foregroundColor(Color(.white))
+                        .cornerRadius(10)
+                })
                 Spacer()
             }
             .padding(20)

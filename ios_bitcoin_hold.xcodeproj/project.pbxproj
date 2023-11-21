@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		251C98D92A63346800DB69BD /* UserCredential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251C98D82A63346800DB69BD /* UserCredential.swift */; };
-		251C98E02A63360B00DB69BD /* SignInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251C98DF2A63360B00DB69BD /* SignInService.swift */; };
-		251C98E22A63362E00DB69BD /* MockSignInServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251C98E12A63362E00DB69BD /* MockSignInServiceImpl.swift */; };
+		251C98E02A63360B00DB69BD /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251C98DF2A63360B00DB69BD /* LoginService.swift */; };
+		251C98E22A63362E00DB69BD /* MockLoginServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251C98E12A63362E00DB69BD /* MockLoginServiceImpl.swift */; };
 		251C98E62A63467300DB69BD /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251C98E52A63467300DB69BD /* SignInViewModel.swift */; };
 		254A1C652B056A340068A11A /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254A1C642B056A340068A11A /* SignUpView.swift */; };
 		254A1C672B056A690068A11A /* PortfolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254A1C662B056A690068A11A /* PortfolioView.swift */; };
@@ -20,6 +20,7 @@
 		256764DC2A3E6E8000CE4AE5 /* ios_bitcoin_holdUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256764DB2A3E6E8000CE4AE5 /* ios_bitcoin_holdUITests.swift */; };
 		256764DE2A3E6E8000CE4AE5 /* ios_bitcoin_holdUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256764DD2A3E6E8000CE4AE5 /* ios_bitcoin_holdUITestsLaunchTests.swift */; };
 		25724BF72A79D788008B790E /* SignInViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25724BF62A79D788008B790E /* SignInViewModelTest.swift */; };
+		25CB715D2B0D21A000520EC4 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CB715C2B0D21A000520EC4 /* SignUpViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,8 +42,8 @@
 
 /* Begin PBXFileReference section */
 		251C98D82A63346800DB69BD /* UserCredential.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCredential.swift; sourceTree = "<group>"; };
-		251C98DF2A63360B00DB69BD /* SignInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInService.swift; sourceTree = "<group>"; };
-		251C98E12A63362E00DB69BD /* MockSignInServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSignInServiceImpl.swift; sourceTree = "<group>"; };
+		251C98DF2A63360B00DB69BD /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		251C98E12A63362E00DB69BD /* MockLoginServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginServiceImpl.swift; sourceTree = "<group>"; };
 		251C98E52A63467300DB69BD /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		254A1C642B056A340068A11A /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		254A1C662B056A690068A11A /* PortfolioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioView.swift; sourceTree = "<group>"; };
@@ -56,6 +57,7 @@
 		256764DB2A3E6E8000CE4AE5 /* ios_bitcoin_holdUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_bitcoin_holdUITests.swift; sourceTree = "<group>"; };
 		256764DD2A3E6E8000CE4AE5 /* ios_bitcoin_holdUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_bitcoin_holdUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		25724BF62A79D788008B790E /* SignInViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModelTest.swift; sourceTree = "<group>"; };
+		25CB715C2B0D21A000520EC4 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +97,7 @@
 		251C98DD2A6335D400DB69BD /* service */ = {
 			isa = PBXGroup;
 			children = (
-				251C98DF2A63360B00DB69BD /* SignInService.swift */,
+				251C98DF2A63360B00DB69BD /* LoginService.swift */,
 				251C98DE2A6335ED00DB69BD /* impl */,
 			);
 			path = service;
@@ -104,7 +106,7 @@
 		251C98DE2A6335ED00DB69BD /* impl */ = {
 			isa = PBXGroup;
 			children = (
-				251C98E12A63362E00DB69BD /* MockSignInServiceImpl.swift */,
+				251C98E12A63362E00DB69BD /* MockLoginServiceImpl.swift */,
 			);
 			path = impl;
 			sourceTree = "<group>";
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				251C98E52A63467300DB69BD /* SignInViewModel.swift */,
+				25CB715C2B0D21A000520EC4 /* SignUpViewModel.swift */,
 			);
 			path = view_model;
 			sourceTree = "<group>";
@@ -316,10 +319,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				251C98E22A63362E00DB69BD /* MockSignInServiceImpl.swift in Sources */,
-				251C98E02A63360B00DB69BD /* SignInService.swift in Sources */,
+				251C98E22A63362E00DB69BD /* MockLoginServiceImpl.swift in Sources */,
+				251C98E02A63360B00DB69BD /* LoginService.swift in Sources */,
 				251C98E62A63467300DB69BD /* SignInViewModel.swift in Sources */,
 				254A1C652B056A340068A11A /* SignUpView.swift in Sources */,
+				25CB715D2B0D21A000520EC4 /* SignUpViewModel.swift in Sources */,
 				256764C32A3E6E7E00CE4AE5 /* SignInView.swift in Sources */,
 				251C98D92A63346800DB69BD /* UserCredential.swift in Sources */,
 				256764C12A3E6E7E00CE4AE5 /* ios_bitcoin_holdApp.swift in Sources */,

@@ -4,13 +4,22 @@ import Foundation
 import Combine
 
 final class SignInViewModelTest: XCTestCase {
-    var service: MockSignInServiceImpl!
+    var service: MockLoginServiceImpl!
     var viewModel: SignInViewModel!
     
-    class MockSignInServiceImpl : SignInService, ObservableObject{
+    class MockLoginServiceImpl : LoginService, ObservableObject{
         var response: AnyPublisher<Bool, Error>?
         
         func signIn(credential: UserCredential)-> AnyPublisher<Bool, Error>{
+            if let response = response {
+                return response
+            } else {
+                let mockData = true
+                return Result.Publisher(mockData).eraseToAnyPublisher()
+            }
+        }
+        
+        func signUp(credential: UserCredential)-> AnyPublisher<Bool, Error>{
             if let response = response {
                 return response
             } else {
@@ -22,8 +31,8 @@ final class SignInViewModelTest: XCTestCase {
     
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        service = MockSignInServiceImpl()
-        viewModel = SignInViewModel(signInService: service)
+        service = MockLoginServiceImpl()
+        viewModel = SignInViewModel(loginService: service)
     }
     
     override func tearDownWithError() throws {
@@ -32,13 +41,13 @@ final class SignInViewModelTest: XCTestCase {
     
     func testShouldSignInUserWhenUserCredentialsAreValid() throws {
         viewModel.signIn(email: "abc", password: "abc")
-        XCTAssertTrue(viewModel.userSignIn)
+        XCTAssertTrue(viewModel.isUserSignedIn)
     }
     
     func testShouldNotSignInUserWhenUserCredentialsAreInvalid() throws {
         service.response = Result.Publisher(false).eraseToAnyPublisher()
         viewModel.signIn(email: "abc", password: "abc")
-        XCTAssertTrue(!viewModel.userSignIn)
+        XCTAssertTrue(!viewModel.isUserSignedIn)
     }
     
 }

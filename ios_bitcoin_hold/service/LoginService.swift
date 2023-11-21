@@ -1,6 +1,7 @@
 import Foundation
 import Combine
 
-protocol SignInService{
+protocol LoginService{
     func signIn(credential: UserCredential) -> AnyPublisher<Bool, Error>
+    func signUp(credential: UserCredential) -> AnyPublisher<Bool, Error>
 }
