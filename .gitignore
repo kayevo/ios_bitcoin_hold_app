@@ -102,3 +102,6 @@ iOSInjectionProject/
 
 # Built Visual Studio Code Extensions
 *.vsix
+
+# Configuration variables / secrets
+Config.xccconfig
