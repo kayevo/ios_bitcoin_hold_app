@@ -110,3 +110,4 @@ Secret.plist
 
 # MacOS
 .DS_Store
+**/.DS_Store
