@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1482DF754EF959B0D98BE430 /* Pods_ios_bitcoin_hold.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 929E550B7EFB6D119EBCCB7B /* Pods_ios_bitcoin_hold.framework */; };
 		251C98D92A63346800DB69BD /* UserCredential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251C98D82A63346800DB69BD /* UserCredential.swift */; };
 		251C98E02A63360B00DB69BD /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251C98DF2A63360B00DB69BD /* LoginService.swift */; };
 		251C98E22A63362E00DB69BD /* MockLoginServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251C98E12A63362E00DB69BD /* MockLoginServiceImpl.swift */; };
@@ -20,7 +21,10 @@
 		256764DC2A3E6E8000CE4AE5 /* ios_bitcoin_holdUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256764DB2A3E6E8000CE4AE5 /* ios_bitcoin_holdUITests.swift */; };
 		256764DE2A3E6E8000CE4AE5 /* ios_bitcoin_holdUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256764DD2A3E6E8000CE4AE5 /* ios_bitcoin_holdUITestsLaunchTests.swift */; };
 		25724BF72A79D788008B790E /* SignInViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25724BF62A79D788008B790E /* SignInViewModelTest.swift */; };
+		258FF0AC2B0F8FB60032463D /* Secret.plist in Resources */ = {isa = PBXBuildFile; fileRef = 258FF0AB2B0F8FB60032463D /* Secret.plist */; };
 		25CB715D2B0D21A000520EC4 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CB715C2B0D21A000520EC4 /* SignUpViewModel.swift */; };
+		C461615EDEBE23BF6DBED9AD /* Pods_ios_bitcoin_holdTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEAA1344056DB83A9742DEEB /* Pods_ios_bitcoin_holdTests.framework */; };
+		E48185D16F89DA4E8ADE646A /* Pods_ios_bitcoin_hold_ios_bitcoin_holdUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DA3889438B85F56B88A383C /* Pods_ios_bitcoin_hold_ios_bitcoin_holdUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F8EB3919561576EE635D5A4 /* Pods-ios_bitcoin_holdTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios_bitcoin_holdTests.release.xcconfig"; path = "Target Support Files/Pods-ios_bitcoin_holdTests/Pods-ios_bitcoin_holdTests.release.xcconfig"; sourceTree = "<group>"; };
 		251C98D82A63346800DB69BD /* UserCredential.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCredential.swift; sourceTree = "<group>"; };
 		251C98DF2A63360B00DB69BD /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		251C98E12A63362E00DB69BD /* MockLoginServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginServiceImpl.swift; sourceTree = "<group>"; };
@@ -57,7 +62,17 @@
 		256764DB2A3E6E8000CE4AE5 /* ios_bitcoin_holdUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_bitcoin_holdUITests.swift; sourceTree = "<group>"; };
 		256764DD2A3E6E8000CE4AE5 /* ios_bitcoin_holdUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_bitcoin_holdUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		25724BF62A79D788008B790E /* SignInViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModelTest.swift; sourceTree = "<group>"; };
+		258FF0AB2B0F8FB60032463D /* Secret.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secret.plist; sourceTree = "<group>"; };
+		258FF0AD2B0F949B0032463D /* Secret.exemple.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secret.exemple.plist; sourceTree = "<group>"; };
 		25CB715C2B0D21A000520EC4 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		3DA3889438B85F56B88A383C /* Pods_ios_bitcoin_hold_ios_bitcoin_holdUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_bitcoin_hold_ios_bitcoin_holdUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		625A9A263007F26F0BBA1AC8 /* Pods-ios_bitcoin_hold-ios_bitcoin_holdUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios_bitcoin_hold-ios_bitcoin_holdUITests.release.xcconfig"; path = "Target Support Files/Pods-ios_bitcoin_hold-ios_bitcoin_holdUITests/Pods-ios_bitcoin_hold-ios_bitcoin_holdUITests.release.xcconfig"; sourceTree = "<group>"; };
+		77E8E28C3AFE0F8272595315 /* Pods-ios_bitcoin_holdTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios_bitcoin_holdTests.debug.xcconfig"; path = "Target Support Files/Pods-ios_bitcoin_holdTests/Pods-ios_bitcoin_holdTests.debug.xcconfig"; sourceTree = "<group>"; };
+		929E550B7EFB6D119EBCCB7B /* Pods_ios_bitcoin_hold.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_bitcoin_hold.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA081F72AA8FFEDD8EA6CC0F /* Pods-ios_bitcoin_hold.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios_bitcoin_hold.release.xcconfig"; path = "Target Support Files/Pods-ios_bitcoin_hold/Pods-ios_bitcoin_hold.release.xcconfig"; sourceTree = "<group>"; };
+		BD0358FB55F69CCB0ABD99E7 /* Pods-ios_bitcoin_hold-ios_bitcoin_holdUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios_bitcoin_hold-ios_bitcoin_holdUITests.debug.xcconfig"; path = "Target Support Files/Pods-ios_bitcoin_hold-ios_bitcoin_holdUITests/Pods-ios_bitcoin_hold-ios_bitcoin_holdUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CEAA1344056DB83A9742DEEB /* Pods_ios_bitcoin_holdTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_bitcoin_holdTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEBC2A8994EC753C0B0F9F1C /* Pods-ios_bitcoin_hold.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios_bitcoin_hold.debug.xcconfig"; path = "Target Support Files/Pods-ios_bitcoin_hold/Pods-ios_bitcoin_hold.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1482DF754EF959B0D98BE430 /* Pods_ios_bitcoin_hold.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C461615EDEBE23BF6DBED9AD /* Pods_ios_bitcoin_holdTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E48185D16F89DA4E8ADE646A /* Pods_ios_bitcoin_hold_ios_bitcoin_holdUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +155,8 @@
 				256764D02A3E6E8000CE4AE5 /* ios_bitcoin_holdTests */,
 				256764DA2A3E6E8000CE4AE5 /* ios_bitcoin_holdUITests */,
 				256764BE2A3E6E7E00CE4AE5 /* Products */,
+				D504C72A432A9161089684AE /* Pods */,
+				B65D9E0DA00375682194689F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -160,6 +180,8 @@
 				256764C02A3E6E7E00CE4AE5 /* ios_bitcoin_holdApp.swift */,
 				256764C42A3E6E7F00CE4AE5 /* Assets.xcassets */,
 				256764C62A3E6E7F00CE4AE5 /* Preview Content */,
+				258FF0AB2B0F8FB60032463D /* Secret.plist */,
+				258FF0AD2B0F949B0032463D /* Secret.exemple.plist */,
 			);
 			path = ios_bitcoin_hold;
 			sourceTree = "<group>";
@@ -189,6 +211,29 @@
 			path = ios_bitcoin_holdUITests;
 			sourceTree = "<group>";
 		};
+		B65D9E0DA00375682194689F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				929E550B7EFB6D119EBCCB7B /* Pods_ios_bitcoin_hold.framework */,
+				3DA3889438B85F56B88A383C /* Pods_ios_bitcoin_hold_ios_bitcoin_holdUITests.framework */,
+				CEAA1344056DB83A9742DEEB /* Pods_ios_bitcoin_holdTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D504C72A432A9161089684AE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CEBC2A8994EC753C0B0F9F1C /* Pods-ios_bitcoin_hold.debug.xcconfig */,
+				BA081F72AA8FFEDD8EA6CC0F /* Pods-ios_bitcoin_hold.release.xcconfig */,
+				BD0358FB55F69CCB0ABD99E7 /* Pods-ios_bitcoin_hold-ios_bitcoin_holdUITests.debug.xcconfig */,
+				625A9A263007F26F0BBA1AC8 /* Pods-ios_bitcoin_hold-ios_bitcoin_holdUITests.release.xcconfig */,
+				77E8E28C3AFE0F8272595315 /* Pods-ios_bitcoin_holdTests.debug.xcconfig */,
+				1F8EB3919561576EE635D5A4 /* Pods-ios_bitcoin_holdTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -196,9 +241,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 256764E12A3E6E8000CE4AE5 /* Build configuration list for PBXNativeTarget "ios_bitcoin_hold" */;
 			buildPhases = (
+				02D7C80B449C42B8A8B6BA9A /* [CP] Check Pods Manifest.lock */,
 				256764B92A3E6E7E00CE4AE5 /* Sources */,
 				256764BA2A3E6E7E00CE4AE5 /* Frameworks */,
 				256764BB2A3E6E7E00CE4AE5 /* Resources */,
+				376C2661B704A8EDD4827289 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -213,6 +260,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 256764E42A3E6E8000CE4AE5 /* Build configuration list for PBXNativeTarget "ios_bitcoin_holdTests" */;
 			buildPhases = (
+				AC19F709706568D5E1E8A2BB /* [CP] Check Pods Manifest.lock */,
 				256764C92A3E6E8000CE4AE5 /* Sources */,
 				256764CA2A3E6E8000CE4AE5 /* Frameworks */,
 				256764CB2A3E6E8000CE4AE5 /* Resources */,
@@ -231,9 +279,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 256764E72A3E6E8000CE4AE5 /* Build configuration list for PBXNativeTarget "ios_bitcoin_holdUITests" */;
 			buildPhases = (
+				EA911DB7A6D1FBE77BF3BD4B /* [CP] Check Pods Manifest.lock */,
 				256764D32A3E6E8000CE4AE5 /* Sources */,
 				256764D42A3E6E8000CE4AE5 /* Frameworks */,
 				256764D52A3E6E8000CE4AE5 /* Resources */,
+				B2E62B8923A361CC4ADC9E62 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -294,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				256764C82A3E6E7F00CE4AE5 /* Preview Assets.xcassets in Resources */,
+				258FF0AC2B0F8FB60032463D /* Secret.plist in Resources */,
 				256764C52A3E6E7F00CE4AE5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,6 +364,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		02D7C80B449C42B8A8B6BA9A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ios_bitcoin_hold-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		376C2661B704A8EDD4827289 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ios_bitcoin_hold/Pods-ios_bitcoin_hold-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ios_bitcoin_hold/Pods-ios_bitcoin_hold-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ios_bitcoin_hold/Pods-ios_bitcoin_hold-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC19F709706568D5E1E8A2BB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ios_bitcoin_holdTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B2E62B8923A361CC4ADC9E62 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ios_bitcoin_hold-ios_bitcoin_holdUITests/Pods-ios_bitcoin_hold-ios_bitcoin_holdUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ios_bitcoin_hold-ios_bitcoin_holdUITests/Pods-ios_bitcoin_hold-ios_bitcoin_holdUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ios_bitcoin_hold-ios_bitcoin_holdUITests/Pods-ios_bitcoin_hold-ios_bitcoin_holdUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA911DB7A6D1FBE77BF3BD4B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ios_bitcoin_hold-ios_bitcoin_holdUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		256764B92A3E6E7E00CE4AE5 /* Sources */ = {
@@ -480,6 +634,7 @@
 		};
 		256764E22A3E6E8000CE4AE5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEBC2A8994EC753C0B0F9F1C /* Pods-ios_bitcoin_hold.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -508,6 +663,7 @@
 		};
 		256764E32A3E6E8000CE4AE5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA081F72AA8FFEDD8EA6CC0F /* Pods-ios_bitcoin_hold.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -536,6 +692,7 @@
 		};
 		256764E52A3E6E8000CE4AE5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77E8E28C3AFE0F8272595315 /* Pods-ios_bitcoin_holdTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -555,6 +712,7 @@
 		};
 		256764E62A3E6E8000CE4AE5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F8EB3919561576EE635D5A4 /* Pods-ios_bitcoin_holdTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -574,6 +732,7 @@
 		};
 		256764E82A3E6E8000CE4AE5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD0358FB55F69CCB0ABD99E7 /* Pods-ios_bitcoin_hold-ios_bitcoin_holdUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -591,6 +750,7 @@
 		};
 		256764E92A3E6E8000CE4AE5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 625A9A263007F26F0BBA1AC8 /* Pods-ios_bitcoin_hold-ios_bitcoin_holdUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
