@@ -8,4 +8,4 @@ in the project directory to download cocopoads dependencies
 
 ## Enviromeant variables / secrets
 
-The secrets keeps in Secret.plist you need create a new one in your local project and add to resources of project, to get variable names you can access the Secret.exemple.plist
+The secrets keeps in a Property List called Secret.plist. You need create a new one in your local project and add to resources of project, to get variable names you can access the Secret.exemple.plist

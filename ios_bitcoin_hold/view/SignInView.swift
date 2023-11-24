@@ -11,6 +11,7 @@ struct SignInView: View {
     let primaryDarkBlue = UIColor(red: 0.16, green: 0.19, blue: 0.24, alpha: 1)
     let primaryLightBlue = UIColor(red: 0.2, green: 0.24, blue: 0.29, alpha: 1)
     let primaryGreen = UIColor(red: 0.1, green: 0.77, blue: 0.51, alpha: 1)
+    @State private var signInFailed: Bool = false
     
     var body: some View {
         NavigationView{
@@ -47,7 +48,13 @@ struct SignInView: View {
                 .frame(width: .infinity, height: 300)
                 .padding(.horizontal, -20)
                 Button(action: {
-                    signInViewModel.signIn(email: email, password: password)
+                    Task {
+                        do {
+                            signInViewModel.signIn(email: email, password: password)
+                        } catch {
+                            print("Error fetching data: \(error)")
+                        }
+                    }
                 }) {
                     Text("Sign in")
                         .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
@@ -56,17 +63,17 @@ struct SignInView: View {
                         .foregroundColor(Color(primaryLightBlue))
                         .cornerRadius(10)
                 }
-                .onReceive(signInViewModel.$isUserSignedIn) { isUserSignedIn in
-                    if (isUserSignedIn) {
-                        self.isUserSignedIn = isUserSignedIn
-                    } else {
-                        print("Dont sign in")
-                    }
+                .onReceive(signInViewModel.$isUserSignedIn.compactMap { $0 }) { isUserSignedIn in
+                    self.isUserSignedIn = isUserSignedIn
+                    signInFailed = !isUserSignedIn
                 }
                 .disabled(hintEmail != "Valid e-mail" || hintPassword != "Valid password")
                 .navigationBarBackButtonHidden(true)
                 .fullScreenCover(isPresented: $isUserSignedIn) {
                     PortfolioView()
+                }
+                .alert("User doesn't found", isPresented: $signInFailed) {
+                    Button("Ok", role: .cancel) {}
                 }
                 NavigationLink(destination: {
                     SignUpView()

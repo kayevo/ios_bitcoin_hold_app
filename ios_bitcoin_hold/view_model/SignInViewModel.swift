@@ -2,7 +2,7 @@ import Foundation
 import Combine
 
 class SignInViewModel: ObservableObject{
-    @Published var isUserSignedIn = false
+    @Published var isUserSignedIn: Bool? = nil
     let loginService: LoginService
     var cancellables = Set<AnyCancellable>()
     
@@ -10,15 +10,19 @@ class SignInViewModel: ObservableObject{
         self.loginService = loginService
     }
     
-    func signIn(email: String, password: String){
+    func signIn(email: String, password: String) {
         let userCredential = UserCredential(email: email, password: password)
-        return loginService.signIn(credential: userCredential)
-            .sink{
-                _ in
-            } receiveValue:{ [weak self] resultUserSignIn in
-                self?.isUserSignedIn = resultUserSignIn
+        
+        loginService.signIn(credential: userCredential) { [weak self] result in
+            switch result {
+            case .success(let value):
+                DispatchQueue.main.async {
+                    self?.isUserSignedIn = value
+                }
+            case .failure(let error):
+                print("Sign-in error: \(error)")
             }
-            .store(in: &cancellables)
+        }
     }
     
     func mockValidateEmail(email: String) -> Bool{

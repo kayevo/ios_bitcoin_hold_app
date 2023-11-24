@@ -12,6 +12,7 @@
 		251C98E02A63360B00DB69BD /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251C98DF2A63360B00DB69BD /* LoginService.swift */; };
 		251C98E22A63362E00DB69BD /* MockLoginServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251C98E12A63362E00DB69BD /* MockLoginServiceImpl.swift */; };
 		251C98E62A63467300DB69BD /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251C98E52A63467300DB69BD /* SignInViewModel.swift */; };
+		253468182B10F22000308AAF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253468172B10F22000308AAF /* User.swift */; };
 		254A1C652B056A340068A11A /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254A1C642B056A340068A11A /* SignUpView.swift */; };
 		254A1C672B056A690068A11A /* PortfolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254A1C662B056A690068A11A /* PortfolioView.swift */; };
 		256764C12A3E6E7E00CE4AE5 /* ios_bitcoin_holdApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256764C02A3E6E7E00CE4AE5 /* ios_bitcoin_holdApp.swift */; };
@@ -50,6 +51,7 @@
 		251C98DF2A63360B00DB69BD /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		251C98E12A63362E00DB69BD /* MockLoginServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginServiceImpl.swift; sourceTree = "<group>"; };
 		251C98E52A63467300DB69BD /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		253468172B10F22000308AAF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		254A1C642B056A340068A11A /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		254A1C662B056A690068A11A /* PortfolioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioView.swift; sourceTree = "<group>"; };
 		256764BD2A3E6E7E00CE4AE5 /* ios_bitcoin_hold.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_bitcoin_hold.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				251C98D82A63346800DB69BD /* UserCredential.swift */,
+				253468172B10F22000308AAF /* User.swift */,
 			);
 			name = model;
 			path = ios_bitcoin_hold/model;
@@ -481,6 +484,7 @@
 				256764C32A3E6E7E00CE4AE5 /* SignInView.swift in Sources */,
 				251C98D92A63346800DB69BD /* UserCredential.swift in Sources */,
 				256764C12A3E6E7E00CE4AE5 /* ios_bitcoin_holdApp.swift in Sources */,
+				253468182B10F22000308AAF /* User.swift in Sources */,
 				254A1C672B056A690068A11A /* PortfolioView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
