@@ -1,10 +1,3 @@
-//
-//  PortfolioView.swift
-//  ios_bitcoin_hold
-//
-//  Created by Natan Kayevo on 15/11/23.
-//
-
 import SwiftUI
 
 struct PortfolioView: View {

@@ -1,10 +1,3 @@
-//
-//  SignUpView.swift
-//  ios_bitcoin_hold
-//
-//  Created by Natan Kayevo on 15/11/23.
-//
-
 import SwiftUI
 
 struct SignUpView: View {
@@ -28,7 +21,7 @@ struct SignUpView: View {
             Form{
                 TextField("E-mail", text: $email)
                     .onChange(of: email) { newEmail in
-                        if(signUpViewModel.mockValidateEmail(email: newEmail)){
+                        if(UserCredential.validateEmail(email: newEmail)){
                             hintEmail = "Valid e-mail"
                         }else{
                             hintEmail = "Invalid e-mail"
@@ -40,7 +33,7 @@ struct SignUpView: View {
                 }
                 SecureField("Password", text: $password)
                     .onChange(of: password) { newPassword in
-                        if(signUpViewModel.mockValidatePassword(password: newPassword)){
+                        if(UserCredential.validatePassword(password: newPassword)){
                             hintPassword = "Valid password"
                         }else{
                             hintPassword = "Invalid password"

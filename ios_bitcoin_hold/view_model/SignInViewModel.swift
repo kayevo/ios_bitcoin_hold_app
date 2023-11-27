@@ -21,20 +21,12 @@ class SignInViewModel: ObservableObject{
                     self?.isUserSignedIn = value
                     self?.signInFailed = false
                 }
-            case .failure(let error):
+            case .failure(_/*let error*/):
                 DispatchQueue.main.async {
                     self?.isUserSignedIn = false
                     self?.signInFailed = true
                 }
             }
         }
-    }
-    
-    func mockValidateEmail(email: String) -> Bool{
-        return email.count > 4
-    }
-    
-    func mockValidatePassword(password: String) -> Bool{
-        return password.count > 4
     }
 }

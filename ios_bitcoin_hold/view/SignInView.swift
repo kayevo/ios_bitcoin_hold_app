@@ -24,7 +24,7 @@ struct SignInView: View {
                     TextField("E-mail", text: $email)
                         .autocapitalization(.none)
                         .onChange(of: email) { newEmail in
-                            if(signInViewModel.mockValidateEmail(email: newEmail)){
+                            if(UserCredential.validateEmail(email: newEmail)){
                                 hintEmail = "Valid e-mail"
                             }else{
                                 hintEmail = "Invalid e-mail"
@@ -36,14 +36,14 @@ struct SignInView: View {
                     }
                     SecureField("Password", text: $password)
                         .onChange(of: password) { newPassword in
-                            if(signInViewModel.mockValidatePassword(password: newPassword)){
+                            if(UserCredential.validatePassword(password: newPassword)){
                                 hintPassword = "Valid password"
                             }else{
                                 hintPassword = "Invalid password"
                             }
                         }
                     if(hintPassword != "Valid password"){
-                        Text("Password have less than 4 characteres")
+                        Text("Password requires at least 5 characters and one special character")
                             .foregroundColor(.red)
                     }
                 }
@@ -60,13 +60,7 @@ struct SignInView: View {
                 Button(action: {
                     isLoading = true
                     Task {
-                        do {
-                            signInViewModel.signIn(email: email, password: password)
-                        } catch {
-                            signInFailedMessage = "Server error, try again in one hour"
-                            isSignInFailed = true
-                            isLoading = false
-                        }
+                        signInViewModel.signIn(email: email, password: password)
                     }
                 }) {
                     Text("Sign in")
