@@ -12,6 +12,7 @@ struct SignInView: View {
     let primaryLightBlue = UIColor(red: 0.2, green: 0.24, blue: 0.29, alpha: 1)
     let primaryGreen = UIColor(red: 0.1, green: 0.77, blue: 0.51, alpha: 1)
     @State private var signInFailed: Bool = false
+    @State private var isLoading: Bool = false
     
     var body: some View {
         NavigationView{
@@ -20,6 +21,7 @@ struct SignInView: View {
                 Text("Sign in").foregroundColor(Color(primaryGreen)).font(.title)
                 Form {
                     TextField("E-mail", text: $email)
+                        .autocapitalization(.none)
                         .onChange(of: email) { newEmail in
                             if(signInViewModel.mockValidateEmail(email: newEmail)){
                                 hintEmail = "Valid e-mail"
@@ -47,7 +49,15 @@ struct SignInView: View {
                 .scrollContentBackground(.hidden)
                 .frame(width: .infinity, height: 300)
                 .padding(.horizontal, -20)
+                if(isLoading){
+                    ProgressView("Loading...")
+                        .progressViewStyle(CircularProgressViewStyle())
+                        .tint(.white)
+                        .foregroundColor(.white)
+                        .padding()
+                }
                 Button(action: {
+                    isLoading = true
                     Task {
                         do {
                             signInViewModel.signIn(email: email, password: password)
@@ -66,8 +76,9 @@ struct SignInView: View {
                 .onReceive(signInViewModel.$isUserSignedIn.compactMap { $0 }) { isUserSignedIn in
                     self.isUserSignedIn = isUserSignedIn
                     signInFailed = !isUserSignedIn
+                    isLoading = false
                 }
-                .disabled(hintEmail != "Valid e-mail" || hintPassword != "Valid password")
+                .disabled(hintEmail != "Valid e-mail" || hintPassword != "Valid password" || isLoading)
                 .navigationBarBackButtonHidden(true)
                 .fullScreenCover(isPresented: $isUserSignedIn) {
                     PortfolioView()
