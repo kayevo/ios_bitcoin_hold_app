@@ -4,7 +4,7 @@ import Combine
 class MockLoginServiceImpl : LoginService, ObservableObject{
     private var cancellables: Set<AnyCancellable> = []
     
-    func signIn(credential: UserCredential, completion: @escaping (Result<Bool, Error>) -> Void) {
+    func signIn(credential: UserCredential, completion: @escaping (Result<Bool, Error>) -> Void){
         let secretFilePath = Bundle.main.path(forResource: "Secret", ofType: "plist") ?? ""
         let secretDictionary = NSDictionary(contentsOfFile: secretFilePath)
         
@@ -32,30 +32,35 @@ class MockLoginServiceImpl : LoginService, ObservableObject{
         request.httpMethod = "GET"
         request.addValue(apiKey, forHTTPHeaderField: "api_key") // Insert the value into the header
         
-        URLSession.shared.dataTaskPublisher(for: request)
-            .subscribe(on: DispatchQueue.global(qos: .background))
-            .receive(on: DispatchQueue.main)
-            .tryMap { data, response in
-                guard let httpResponse = response as? HTTPURLResponse else {
-                    throw URLError(.badServerResponse)
+        do{
+            URLSession.shared.dataTaskPublisher(for: request)
+                .subscribe(on: DispatchQueue.global(qos: .background))
+                .receive(on: DispatchQueue.main)
+                .tryMap { data, response in
+                    guard let httpResponse = response as? HTTPURLResponse else {
+                        throw URLError(.badServerResponse)
+                    }
+                    
+                    if(httpResponse.statusCode == 200){
+                        completion(.success(true))
+                    }else if(httpResponse.statusCode == 404){
+                        completion(.success(false))
+                    }else{
+                        completion(.failure(LoginError.serverError))
+                    }
+                    return data
                 }
-                if(httpResponse.statusCode == 200){
-                    completion(.success(true))
-                }else if(httpResponse.statusCode == 404){
-                    completion(.success(false))
-                }else{
-                    completion(.failure(LoginError.serverError))
+                .decode(type: User.self, decoder: JSONDecoder())
+                .sink { completion in // Handle completion if needed
+                } receiveValue: { user in
+                    if(user.id.isEmpty){
+                        completion(.failure(LoginError.serverError))
+                    }
                 }
-                return data
-            }
-            .decode(type: User.self, decoder: JSONDecoder())
-            .sink { completion in // Handle completion if needed
-            } receiveValue: { user in
-                if(user.id.isEmpty){
-                    completion(.failure(LoginError.serverError))
-                }
-            }
-            .store(in: &cancellables)
+                .store(in: &cancellables)
+        }catch{
+            completion(.failure(LoginError.serverError))
+        }
     }
     
     func signUp(credential: UserCredential)-> AnyPublisher<Bool, Error>{

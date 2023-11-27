@@ -3,6 +3,7 @@ import Combine
 
 class SignInViewModel: ObservableObject{
     @Published var isUserSignedIn: Bool? = nil
+    var signInFailed: Bool = false
     let loginService: LoginService
     var cancellables = Set<AnyCancellable>()
     
@@ -10,7 +11,7 @@ class SignInViewModel: ObservableObject{
         self.loginService = loginService
     }
     
-    func signIn(email: String, password: String) {
+    func signIn(email: String, password: String){
         let userCredential = UserCredential(email: email, password: password)
         
         loginService.signIn(credential: userCredential) { [weak self] result in
@@ -18,9 +19,13 @@ class SignInViewModel: ObservableObject{
             case .success(let value):
                 DispatchQueue.main.async {
                     self?.isUserSignedIn = value
+                    self?.signInFailed = false
                 }
             case .failure(let error):
-                print("Sign-in error: \(error)")
+                DispatchQueue.main.async {
+                    self?.isUserSignedIn = false
+                    self?.signInFailed = true
+                }
             }
         }
     }

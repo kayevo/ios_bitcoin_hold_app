@@ -6,12 +6,13 @@ struct SignInView: View {
     @State private var hintEmail = ""
     @State private var password = ""
     @State private var hintPassword = ""
-    @State private var isUserSignedIn: Bool = false
+    @State private var goToPortfolio: Bool = false
     @StateObject private var signInViewModel = SignInViewModel(loginService: MockLoginServiceImpl())
     let primaryDarkBlue = UIColor(red: 0.16, green: 0.19, blue: 0.24, alpha: 1)
     let primaryLightBlue = UIColor(red: 0.2, green: 0.24, blue: 0.29, alpha: 1)
     let primaryGreen = UIColor(red: 0.1, green: 0.77, blue: 0.51, alpha: 1)
-    @State private var signInFailed: Bool = false
+    @State private var isSignInFailed: Bool = false
+    @State private var signInFailedMessage: String = ""
     @State private var isLoading: Bool = false
     
     var body: some View {
@@ -62,7 +63,9 @@ struct SignInView: View {
                         do {
                             signInViewModel.signIn(email: email, password: password)
                         } catch {
-                            print("Error fetching data: \(error)")
+                            signInFailedMessage = "Server error, try again in one hour"
+                            isSignInFailed = true
+                            isLoading = false
                         }
                     }
                 }) {
@@ -74,16 +77,28 @@ struct SignInView: View {
                         .cornerRadius(10)
                 }
                 .onReceive(signInViewModel.$isUserSignedIn.compactMap { $0 }) { isUserSignedIn in
-                    self.isUserSignedIn = isUserSignedIn
-                    signInFailed = !isUserSignedIn
-                    isLoading = false
+                    if(isUserSignedIn){
+                        self.goToPortfolio = true
+                        self.signInFailedMessage = ""
+                        self.isSignInFailed = false
+                    }else{
+                        if(signInViewModel.signInFailed){
+                            self.signInFailedMessage = "Server error, try again in one hour"
+                            
+                        }else{
+                            self.signInFailedMessage = "User doesn't found"
+                        }
+                        self.goToPortfolio = false
+                        self.isSignInFailed = true
+                    }
+                    self.isLoading = false
                 }
                 .disabled(hintEmail != "Valid e-mail" || hintPassword != "Valid password" || isLoading)
                 .navigationBarBackButtonHidden(true)
-                .fullScreenCover(isPresented: $isUserSignedIn) {
+                .fullScreenCover(isPresented: $goToPortfolio) {
                     PortfolioView()
                 }
-                .alert("User doesn't found", isPresented: $signInFailed) {
+                .alert(signInFailedMessage, isPresented: $isSignInFailed) {
                     Button("Ok", role: .cancel) {}
                 }
                 NavigationLink(destination: {
