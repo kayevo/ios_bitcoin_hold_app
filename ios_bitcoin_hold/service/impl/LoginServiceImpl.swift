@@ -7,6 +7,11 @@ class LoginServiceImpl : LoginService, ObservableObject{
         contentsOfFile: Bundle.main.path(forResource: "Secret", ofType: "plist") ?? ""
     )
     
+    deinit {
+        cancellables.forEach { $0.cancel() }
+        cancellables.removeAll()
+    }
+    
     func signIn(credential: UserCredential, completion: @escaping (Result<Bool, Error>) -> Void){
         let urlString: String = ((secretDictionary?["API_BASE_URL"] as? String) ?? "") + "user/auth"
         let apiKey: String = (secretDictionary?["API_KEY"] as? String) ?? ""
@@ -51,7 +56,7 @@ class LoginServiceImpl : LoginService, ObservableObject{
                     return data
                 }
                 .decode(type: User.self, decoder: JSONDecoder())
-                .sink { completion in // Handle completion if needed
+                .sink { completion in
                 } receiveValue: { user in
                     if(user.id.isEmpty){
                         completion(.failure(LoginError.serverError))
@@ -107,12 +112,7 @@ class LoginServiceImpl : LoginService, ObservableObject{
                         completion(.failure(LoginError.serverError))
                     }
                 }
-                .sink { completion in
-                    //completion.self
-                    // Optional: Handle completion if needed
-                } receiveValue: { value in
-                    // Optional: Handle received value if needed
-                }
+                .sink { completion in } receiveValue: { value in }
                 .store(in: &cancellables)
         }catch{
             completion(.failure(LoginError.serverError))

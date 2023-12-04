@@ -18,13 +18,13 @@ class SignInViewModel: ObservableObject{
             switch result {
             case .success(let value):
                 DispatchQueue.main.async {
-                    self?.isUserSignedIn = value
                     self?.signInFailed = false
+                    self?.isUserSignedIn = value
                 }
             case .failure(_/*let error*/):
                 DispatchQueue.main.async {
-                    self?.isUserSignedIn = false
                     self?.signInFailed = true
+                    self?.isUserSignedIn = false
                 }
             }
         }

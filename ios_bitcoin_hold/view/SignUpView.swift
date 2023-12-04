@@ -5,14 +5,15 @@ struct SignUpView: View {
     @State private var hintEmail = ""
     @State private var password = ""
     @State private var hintPassword = ""
-    @State private var isUserSignedUp: Bool = false
-    
-    @StateObject private var signUpViewModel = SignUpViewModel(loginService: MockLoginServiceImpl())
+    @State private var goToSignIn: Bool = false
+    @StateObject private var signUpViewModel = SignUpViewModel(loginService: LoginServiceImpl())
     let primaryDarkBlue = UIColor(red: 0.16, green: 0.19, blue: 0.24, alpha: 1)
     let primaryLightBlue = UIColor(red: 0.2, green: 0.24, blue: 0.29, alpha: 1)
     let primaryGreen = UIColor(red: 0.1, green: 0.77, blue: 0.51, alpha: 1)
-    
     @Environment(\.presentationMode) var presentationMode
+    @State private var signUpResultMessage: String = ""
+    @State private var displaySignUpResultMessage: Bool = false
+    @State private var isLoading: Bool = false
     
     var body: some View {
         VStack {
@@ -20,6 +21,7 @@ struct SignUpView: View {
             Text("Sign up").foregroundColor(Color(primaryGreen)).font(.title)
             Form{
                 TextField("E-mail", text: $email)
+                    .autocapitalization(.none)
                     .onChange(of: email) { newEmail in
                         if(UserCredential.validateEmail(email: newEmail)){
                             hintEmail = "Valid e-mail"
@@ -40,15 +42,25 @@ struct SignUpView: View {
                         }
                     }
                 if(hintPassword != "Valid password"){
-                    Text("Password have less than 4 characteres")
+                    Text("Password requires at least 5 characters and one special character")
                         .foregroundColor(.red)
                 }
             }
             .scrollContentBackground(.hidden)
             .frame(width: .infinity, height: 300)
             .padding(.horizontal, -20)
+            if(isLoading){
+                ProgressView("Loading...")
+                    .progressViewStyle(CircularProgressViewStyle())
+                    .tint(.white)
+                    .foregroundColor(.white)
+                    .padding()
+            }
             Button(action: {
-                signUpViewModel.signUp(email: email, password: password)
+                Task{
+                    signUpViewModel.signUp(email: email, password: password)
+                    isLoading = true
+                }
             }) {
                 Text("Sign up")
                     .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
@@ -57,20 +69,27 @@ struct SignUpView: View {
                     .foregroundColor(Color(primaryLightBlue))
                     .cornerRadius(10)
             }
-            .onReceive(signUpViewModel.$isUserSignedUp) { isUserSignedUp in
+            .onReceive(signUpViewModel.$isUserSignedUp.compactMap { $0 }) { isUserSignedUp in
                 if (isUserSignedUp) {
-                    self.isUserSignedUp = isUserSignedUp
+                    self.signUpResultMessage = "User successfully signed up"
+                    self.goToSignIn = true
                 } else {
-                    print("Dont signed up")
+                    if(signUpViewModel.signUpFailed){
+                        self.signUpResultMessage = "Server error, try again in one hour"
+                        self.goToSignIn = false
+                    }else{
+                        self.signUpResultMessage = "User already exists"
+                        self.goToSignIn = false
+                    }
                 }
+                displaySignUpResultMessage = true
+                isLoading = false
             }
-            .disabled(hintEmail != "Valid e-mail" || hintPassword != "Valid password")
-            .alert("User successfully signed up", isPresented: $isUserSignedUp) {
+            .disabled(hintEmail != "Valid e-mail" || hintPassword != "Valid password" || isLoading)
+            .alert(signUpResultMessage, isPresented: $displaySignUpResultMessage) {
                 Button("Ok", role: .cancel) {
-                    if (isUserSignedUp) {
+                    if (goToSignIn) {
                         presentationMode.wrappedValue.dismiss() // back to previous view
-                    } else {
-                        print("Dont signed up")
                     }
                 }
             }
