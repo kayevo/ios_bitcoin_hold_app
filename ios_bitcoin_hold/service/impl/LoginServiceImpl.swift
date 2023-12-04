@@ -1,13 +1,13 @@
 import Foundation
 import Combine
 
-class MockLoginServiceImpl : LoginService, ObservableObject{
+class LoginServiceImpl : LoginService, ObservableObject{
     private var cancellables: Set<AnyCancellable> = []
+    let secretDictionary = NSDictionary(
+        contentsOfFile: Bundle.main.path(forResource: "Secret", ofType: "plist") ?? ""
+    )
     
     func signIn(credential: UserCredential, completion: @escaping (Result<Bool, Error>) -> Void){
-        let secretFilePath = Bundle.main.path(forResource: "Secret", ofType: "plist") ?? ""
-        let secretDictionary = NSDictionary(contentsOfFile: secretFilePath)
-        
         let urlString: String = ((secretDictionary?["API_BASE_URL"] as? String) ?? "") + "user/auth"
         let apiKey: String = (secretDictionary?["API_KEY"] as? String) ?? ""
         
@@ -63,9 +63,60 @@ class MockLoginServiceImpl : LoginService, ObservableObject{
         }
     }
     
-    func signUp(credential: UserCredential)-> AnyPublisher<Bool, Error>{
-        let publisher = Just(true).setFailureType(to: Error.self).eraseToAnyPublisher()
-        return publisher
+    func signUp(credential: UserCredential, completion: @escaping (Result<Bool, Error>) -> Void){
+        let urlString: String = ((secretDictionary?["API_BASE_URL"] as? String) ?? "") + "user"
+        let apiKey: String = (secretDictionary?["API_KEY"] as? String) ?? ""
+        
+        guard let url = URL(string: urlString) else {
+            completion(.failure(LoginError.invalidURL))
+            return
+        }
+        
+        var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
+        
+        components?.queryItems = [
+            URLQueryItem(name: "email", value: credential.email),
+            URLQueryItem(name: "password", value: credential.password)
+        ]
+        
+        guard let urlWithParameters = components?.url else {
+            completion(.failure(LoginError.invalidURL))
+            return
+        }
+        
+        var request = URLRequest(url: urlWithParameters)
+        request.httpMethod = "POST"
+        request.addValue(apiKey, forHTTPHeaderField: "api_key") // Insert the value into the header
+        
+        do{
+            URLSession.shared.dataTaskPublisher(for: request)
+                .subscribe(on: DispatchQueue.global(qos: .background))
+                .receive(on: DispatchQueue.main)
+                .tryMap { element in
+                    print("Data: ", element.data)
+                    print("Response: ", element.response)
+                    guard let httpResponse = element.response as? HTTPURLResponse else {
+                        throw URLError(.badServerResponse)
+                    }
+                    
+                    if(httpResponse.statusCode == 201){
+                        completion(.success(true))
+                    }else if(httpResponse.statusCode == 409){
+                        completion(.success(false))
+                    }else{
+                        completion(.failure(LoginError.serverError))
+                    }
+                }
+                .sink { completion in
+                    //completion.self
+                    // Optional: Handle completion if needed
+                } receiveValue: { value in
+                    // Optional: Handle received value if needed
+                }
+                .store(in: &cancellables)
+        }catch{
+            completion(.failure(LoginError.serverError))
+        }
     }
 }
 

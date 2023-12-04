@@ -8,9 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		1482DF754EF959B0D98BE430 /* Pods_ios_bitcoin_hold.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 929E550B7EFB6D119EBCCB7B /* Pods_ios_bitcoin_hold.framework */; };
+		250588A52B1D24DE004DF45A /* LoginServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250588A42B1D24DE004DF45A /* LoginServiceTest.swift */; };
+		2513929A2B1BA5EE00703ACA /* UserCredentialTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251392992B1BA5EE00703ACA /* UserCredentialTest.swift */; };
+		2513929C2B1BB07600703ACA /* SignUpViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2513929B2B1BB07600703ACA /* SignUpViewModelTest.swift */; };
 		251C98D92A63346800DB69BD /* UserCredential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251C98D82A63346800DB69BD /* UserCredential.swift */; };
 		251C98E02A63360B00DB69BD /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251C98DF2A63360B00DB69BD /* LoginService.swift */; };
-		251C98E22A63362E00DB69BD /* MockLoginServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251C98E12A63362E00DB69BD /* MockLoginServiceImpl.swift */; };
+		251C98E22A63362E00DB69BD /* LoginServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251C98E12A63362E00DB69BD /* LoginServiceImpl.swift */; };
 		251C98E62A63467300DB69BD /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251C98E52A63467300DB69BD /* SignInViewModel.swift */; };
 		253468182B10F22000308AAF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253468172B10F22000308AAF /* User.swift */; };
 		254A1C652B056A340068A11A /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254A1C642B056A340068A11A /* SignUpView.swift */; };
@@ -47,9 +50,12 @@
 
 /* Begin PBXFileReference section */
 		1F8EB3919561576EE635D5A4 /* Pods-ios_bitcoin_holdTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios_bitcoin_holdTests.release.xcconfig"; path = "Target Support Files/Pods-ios_bitcoin_holdTests/Pods-ios_bitcoin_holdTests.release.xcconfig"; sourceTree = "<group>"; };
+		250588A42B1D24DE004DF45A /* LoginServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginServiceTest.swift; sourceTree = "<group>"; };
+		251392992B1BA5EE00703ACA /* UserCredentialTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCredentialTest.swift; sourceTree = "<group>"; };
+		2513929B2B1BB07600703ACA /* SignUpViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModelTest.swift; sourceTree = "<group>"; };
 		251C98D82A63346800DB69BD /* UserCredential.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCredential.swift; sourceTree = "<group>"; };
 		251C98DF2A63360B00DB69BD /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
-		251C98E12A63362E00DB69BD /* MockLoginServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginServiceImpl.swift; sourceTree = "<group>"; };
+		251C98E12A63362E00DB69BD /* LoginServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginServiceImpl.swift; sourceTree = "<group>"; };
 		251C98E52A63467300DB69BD /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		253468172B10F22000308AAF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		254A1C642B056A340068A11A /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -127,7 +133,7 @@
 		251C98DE2A6335ED00DB69BD /* impl */ = {
 			isa = PBXGroup;
 			children = (
-				251C98E12A63362E00DB69BD /* MockLoginServiceImpl.swift */,
+				251C98E12A63362E00DB69BD /* LoginServiceImpl.swift */,
 			);
 			path = impl;
 			sourceTree = "<group>";
@@ -201,6 +207,9 @@
 			isa = PBXGroup;
 			children = (
 				25724BF62A79D788008B790E /* SignInViewModelTest.swift */,
+				251392992B1BA5EE00703ACA /* UserCredentialTest.swift */,
+				2513929B2B1BB07600703ACA /* SignUpViewModelTest.swift */,
+				250588A42B1D24DE004DF45A /* LoginServiceTest.swift */,
 			);
 			path = ios_bitcoin_holdTests;
 			sourceTree = "<group>";
@@ -306,7 +315,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					256764BC2A3E6E7E00CE4AE5 = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -476,7 +485,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				251C98E22A63362E00DB69BD /* MockLoginServiceImpl.swift in Sources */,
+				251C98E22A63362E00DB69BD /* LoginServiceImpl.swift in Sources */,
 				251C98E02A63360B00DB69BD /* LoginService.swift in Sources */,
 				251C98E62A63467300DB69BD /* SignInViewModel.swift in Sources */,
 				254A1C652B056A340068A11A /* SignUpView.swift in Sources */,
@@ -493,7 +502,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2513929C2B1BB07600703ACA /* SignUpViewModelTest.swift in Sources */,
+				2513929A2B1BA5EE00703ACA /* UserCredentialTest.swift in Sources */,
 				25724BF72A79D788008B790E /* SignInViewModelTest.swift in Sources */,
+				250588A52B1D24DE004DF45A /* LoginServiceTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,6 +570,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -618,6 +631,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

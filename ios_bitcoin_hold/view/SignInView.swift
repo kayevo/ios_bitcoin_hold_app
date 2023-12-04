@@ -7,7 +7,7 @@ struct SignInView: View {
     @State private var password = ""
     @State private var hintPassword = ""
     @State private var goToPortfolio: Bool = false
-    @StateObject private var signInViewModel = SignInViewModel(loginService: MockLoginServiceImpl())
+    @StateObject private var signInViewModel = SignInViewModel(loginService: LoginServiceImpl())
     let primaryDarkBlue = UIColor(red: 0.16, green: 0.19, blue: 0.24, alpha: 1)
     let primaryLightBlue = UIColor(red: 0.2, green: 0.24, blue: 0.29, alpha: 1)
     let primaryGreen = UIColor(red: 0.1, green: 0.77, blue: 0.51, alpha: 1)
