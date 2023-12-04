@@ -21,7 +21,7 @@ class SignInViewModel: ObservableObject{
                     self?.signInFailed = false
                     self?.isUserSignedIn = value
                 }
-            case .failure(_/*let error*/):
+            case .failure(_):
                 DispatchQueue.main.async {
                     self?.signInFailed = true
                     self?.isUserSignedIn = false
