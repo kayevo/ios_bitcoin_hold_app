@@ -18,71 +18,103 @@ struct PortfolioView: View {
     private var cancellables = Set<AnyCancellable>()
     
     var body: some View {
-        VStack{
-            Spacer()
-            
-            Text("Portfolio")
-                .foregroundColor(Color(primaryGreen))
-                .font(.title)
-            HStack {
-                Text("Bitcoins:")
-                    .foregroundColor(.white)
+        NavigationStack {
+            VStack{
                 Spacer()
-                Text(bitcoins)
-                    .foregroundColor(.white)
-            }
-            HStack {
-                Text("Average price:")
-                    .foregroundColor(.white)
+                Text("Portfolio")
+                    .foregroundColor(Color(primaryGreen))
+                    .font(.title)
+                    .toolbar {
+                        ToolbarItem(placement: .primaryAction) {
+                            Menu {
+                                Button(action: {}) {
+                                    Label("Donations", systemImage: "creditcard")
+                                }
+                                Button(action: {}) {
+                                    Label("Customize portfolio amount", systemImage: "square.and.pencil")
+                                }
+                                Button(action: {}) {
+                                    Label("Support", systemImage: "person.wave.2")
+                                }
+                                Button(action: {}) {
+                                    Label("Logout", systemImage: "arrow.up.forward.app")
+                                }
+                                /*
+                                Donations
+                                Customize portfolio amount
+                                Support
+                                Logout
+                                 */
+
+                            }
+                        label: {
+                            VStack{
+                                Image(systemName: "slider.horizontal.3")
+                                Text("Menu").foregroundColor(.white)
+                            }
+                            // Label("Add", systemImage: "slider.horizontal.3")
+                            
+                        }
+                        }
+                    }
+                HStack {
+                    Text("Bitcoins:")
+                        .foregroundColor(.white)
+                    Spacer()
+                    Text(bitcoins)
+                        .foregroundColor(.white)
+                }
+                HStack {
+                    Text("Average price:")
+                        .foregroundColor(.white)
+                    Spacer()
+                    Text(averagePrice)
+                        .foregroundColor(.white)
+                }
+                .padding(.bottom, 60)
+                Text("Analysis")
+                    .foregroundColor(Color(primaryGreen))
+                    .font(.title)
+                HStack {
+                    Text("Bitcoin price:")
+                        .foregroundColor(.white)
+                    Spacer()
+                    Text(bitcoinPrice)
+                        .foregroundColor(.white)
+                }
+                HStack {
+                    Text("Portfolio value:")
+                        .foregroundColor(.white)
+                    Spacer()
+                    Text(portfolioValue)
+                        .foregroundColor(.white)
+                }
+                HStack {
+                    Text("Profits:")
+                        .foregroundColor(.white)
+                    Spacer()
+                    Text(profits)
+                        .foregroundColor(.white)
+                }
                 Spacer()
-                Text(averagePrice)
-                    .foregroundColor(.white)
             }
-            .padding(.bottom, 60)
-            
-            Text("Analysis")
-                .foregroundColor(Color(primaryGreen))
-                .font(.title)
-            HStack {
-                Text("Bitcoin price:")
-                    .foregroundColor(.white)
-                Spacer()
-                Text(bitcoinPrice)
-                    .foregroundColor(.white)
-            }
-            HStack {
-                Text("Portfolio value:")
-                    .foregroundColor(.white)
-                Spacer()
-                Text(portfolioValue)
-                    .foregroundColor(.white)
-            }
-            HStack {
-                Text("Profits:")
-                    .foregroundColor(.white)
-                Spacer()
-                Text(profits)
-                    .foregroundColor(.white)
-            }
-            Spacer()
-           
-        }
-        .padding(.horizontal, 50)
-        .padding(20)
-        .background(Color(primaryLightBlue))
-        .onReceive(portfolioViewModel.$portfolioAmount
-            .compactMap { $0 }){portfolioAmount in
-                self.bitcoins = "\(portfolioAmount.satoshiAmount.parseSatoshiToBitcoin())"
-                self.averagePrice = "\(portfolioAmount.bitcoinAveragePrice.parseToCurrency())"
-            }
+            .padding(.horizontal, 50)
+            .padding(20)
+            .background(Color(primaryLightBlue))
             .onReceive(portfolioViewModel.$analysis
-                .compactMap { $0 }){analysis in
+                .compactMap { $0 }, perform: {analysis in
                     self.bitcoinPrice = "\(analysis.bitcoinPriceInBrl.parseToCurrency())"
                     self.portfolioValue = "\(analysis.portfolioValue.parseToCurrency())"
                     self.profits = "\(analysis.profits.parseToPercentage())"
                 }
+            )
+            .onReceive(portfolioViewModel.$portfolioAmount
+                .compactMap { $0 }, perform: {portfolioAmount in
+                    self.bitcoins = "\(portfolioAmount.satoshiAmount.parseSatoshiToBitcoin())"
+                    self.averagePrice = "\(portfolioAmount.bitcoinAveragePrice.parseToCurrency())"
+                })
+        }
     }
-    
 }
 
 #Preview {
