@@ -61,7 +61,7 @@ final class SignUpViewModelTest: XCTestCase {
     }
     
     func testGivenServerFailsShouldReturnErrorTrueWhenClickToSignUp() throws{
-        let service = MockLoginServiceImpl(result: .failure(LoginError.serverError))
+        let service = MockLoginServiceImpl(result: .failure(NetworkError.serverError))
         let viewModel = SignUpViewModel(loginService: service)
         let email = "email@email.com"
         let password = "email@"

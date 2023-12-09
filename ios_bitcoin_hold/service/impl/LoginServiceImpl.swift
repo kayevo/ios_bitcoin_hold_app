@@ -1,7 +1,7 @@
 import Foundation
 import Combine
 
-class LoginServiceImpl : LoginService, ObservableObject{
+class LoginServiceImpl : LoginService{
     private var cancellables: Set<AnyCancellable> = []
     let secretDictionary = NSDictionary(
         contentsOfFile: Bundle.main.path(forResource: "Secret", ofType: "plist") ?? ""
@@ -17,7 +17,7 @@ class LoginServiceImpl : LoginService, ObservableObject{
         let apiKey: String = (secretDictionary?["API_KEY"] as? String) ?? ""
         
         guard let url = URL(string: urlString) else {
-            completion(.failure(LoginError.invalidURL))
+            completion(.failure(NetworkError.invalidURL))
             return
         }
         
@@ -29,7 +29,7 @@ class LoginServiceImpl : LoginService, ObservableObject{
         ]
         
         guard let urlWithParameters = components?.url else {
-            completion(.failure(LoginError.invalidURL))
+            completion(.failure(NetworkError.invalidURL))
             return
         }
         
@@ -51,7 +51,7 @@ class LoginServiceImpl : LoginService, ObservableObject{
                     }else if(httpResponse.statusCode == 404){
                         completion(.success(false))
                     }else{
-                        completion(.failure(LoginError.serverError))
+                        completion(.failure(NetworkError.serverError))
                     }
                     return data
                 }
@@ -59,12 +59,12 @@ class LoginServiceImpl : LoginService, ObservableObject{
                 .sink { completion in
                 } receiveValue: { user in
                     if(user.id.isEmpty){
-                        completion(.failure(LoginError.serverError))
+                        completion(.failure(NetworkError.serverError))
                     }
                 }
                 .store(in: &cancellables)
         }catch{
-            completion(.failure(LoginError.serverError))
+            completion(.failure(NetworkError.serverError))
         }
     }
     
@@ -73,7 +73,7 @@ class LoginServiceImpl : LoginService, ObservableObject{
         let apiKey: String = (secretDictionary?["API_KEY"] as? String) ?? ""
         
         guard let url = URL(string: urlString) else {
-            completion(.failure(LoginError.invalidURL))
+            completion(.failure(NetworkError.invalidURL))
             return
         }
         
@@ -85,7 +85,7 @@ class LoginServiceImpl : LoginService, ObservableObject{
         ]
         
         guard let urlWithParameters = components?.url else {
-            completion(.failure(LoginError.invalidURL))
+            completion(.failure(NetworkError.invalidURL))
             return
         }
         
@@ -109,18 +109,18 @@ class LoginServiceImpl : LoginService, ObservableObject{
                     }else if(httpResponse.statusCode == 409){
                         completion(.success(false))
                     }else{
-                        completion(.failure(LoginError.serverError))
+                        completion(.failure(NetworkError.serverError))
                     }
                 }
                 .sink { completion in } receiveValue: { value in }
                 .store(in: &cancellables)
         }catch{
-            completion(.failure(LoginError.serverError))
+            completion(.failure(NetworkError.serverError))
         }
     }
 }
 
-enum LoginError: Error{
+enum NetworkError: Error{
     case invalidURL
     case invalidResponse
     case serverError

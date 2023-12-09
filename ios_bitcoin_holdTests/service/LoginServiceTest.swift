@@ -97,7 +97,7 @@ final class LoginServiceTest: XCTestCase {
             case .success(_):
                 XCTFail()
             case .failure(let error):
-                if let loginError = error as? LoginError {
+                if let loginError = error as? NetworkError {
                     XCTAssertEqual(loginError, .serverError)
                     expectation.fulfill()
                 } else {

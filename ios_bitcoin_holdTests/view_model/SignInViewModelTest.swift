@@ -49,11 +49,11 @@ final class SignInViewModelTest: XCTestCase {
         
         wait(for: [expectation], timeout: 5)
         
-        cancellable.cancel() // Cancel the Combine subscription to avoid memory leaks
+        cancellable.cancel()
     }
     
     func testGivenServerFailsShouldReturnErrorTrueWhenClickToSignIn() throws{
-        let service = MockLoginServiceImpl(result: .failure(LoginError.serverError))
+        let service = MockLoginServiceImpl(result: .failure(NetworkError.serverError))
         let viewModel = SignInViewModel(loginService: service)
         let email = "email@email.com"
         let password = "email@"
@@ -72,5 +72,3 @@ final class SignInViewModelTest: XCTestCase {
     }
     
 }
-
-
