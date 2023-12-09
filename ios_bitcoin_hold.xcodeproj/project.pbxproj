@@ -11,6 +11,7 @@
 		250588A52B1D24DE004DF45A /* LoginServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250588A42B1D24DE004DF45A /* LoginServiceTest.swift */; };
 		2513929A2B1BA5EE00703ACA /* UserCredentialTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251392992B1BA5EE00703ACA /* UserCredentialTest.swift */; };
 		2513929C2B1BB07600703ACA /* SignUpViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2513929B2B1BB07600703ACA /* SignUpViewModelTest.swift */; };
+		2518FE102B24A95B00086AF8 /* DonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2518FE0F2B24A95B00086AF8 /* DonationView.swift */; };
 		251C98D92A63346800DB69BD /* UserCredential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251C98D82A63346800DB69BD /* UserCredential.swift */; };
 		251C98E02A63360B00DB69BD /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251C98DF2A63360B00DB69BD /* LoginService.swift */; };
 		251C98E22A63362E00DB69BD /* LoginServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251C98E12A63362E00DB69BD /* LoginServiceImpl.swift */; };
@@ -63,6 +64,7 @@
 		250588A42B1D24DE004DF45A /* LoginServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginServiceTest.swift; sourceTree = "<group>"; };
 		251392992B1BA5EE00703ACA /* UserCredentialTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCredentialTest.swift; sourceTree = "<group>"; };
 		2513929B2B1BB07600703ACA /* SignUpViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModelTest.swift; sourceTree = "<group>"; };
+		2518FE0F2B24A95B00086AF8 /* DonationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationView.swift; sourceTree = "<group>"; };
 		251C98D82A63346800DB69BD /* UserCredential.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCredential.swift; sourceTree = "<group>"; };
 		251C98DF2A63360B00DB69BD /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		251C98E12A63362E00DB69BD /* LoginServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginServiceImpl.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				256764C22A3E6E7E00CE4AE5 /* SignInView.swift */,
 				254A1C642B056A340068A11A /* SignUpView.swift */,
 				254A1C662B056A690068A11A /* PortfolioView.swift */,
+				2518FE0F2B24A95B00086AF8 /* DonationView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -565,6 +568,7 @@
 				25ED6F4D2B23D0E20026BBCA /* CurrencyHelper.swift in Sources */,
 				25ED6F4F2B23D16E0026BBCA /* PortfolioService.swift in Sources */,
 				254A1C672B056A690068A11A /* PortfolioView.swift in Sources */,
+				2518FE102B24A95B00086AF8 /* DonationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -27,33 +27,32 @@ struct PortfolioView: View {
                     .toolbar {
                         ToolbarItem(placement: .primaryAction) {
                             Menu {
-                                Button(action: {}) {
+                                NavigationLink(destination: {
+                                    DonationView()
+                                }, label: {
                                     Label("Donations", systemImage: "creditcard")
-                                }
-                                Button(action: {}) {
+                                })
+                                NavigationLink(destination: {
+                                    // TODO add customize view, dont do modal
+                                }, label: {
                                     Label("Customize portfolio amount", systemImage: "square.and.pencil")
-                                }
-                                Button(action: {}) {
+                                })
+                                NavigationLink(destination: {
+                                    // TODO add support modal with button to copy email
+                                }, label: {
                                     Label("Support", systemImage: "person.wave.2")
-                                }
-                                Button(action: {}) {
+                                })
+                                NavigationLink(destination: {
+                                    // TODO logout user
+                                }, label: {
                                     Label("Logout", systemImage: "arrow.up.forward.app")
-                                }
-                                /*
-                                Donations
-                                Customize portfolio amount
-                                Support
-                                Logout
-                                 */
-
+                                })
                             }
                         label: {
                             VStack{
                                 Image(systemName: "slider.horizontal.3")
                                 Text("Menu").foregroundColor(.white)
                             }
-                            // Label("Add", systemImage: "slider.horizontal.3")
-                            
                         }
                         }
                     }
