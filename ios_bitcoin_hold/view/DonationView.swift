@@ -54,7 +54,7 @@ struct DonationView: View {
             Spacer()
         }.padding(.horizontal, 50)
             .padding(20)
-            .background(Color(primaryLightBlue))
+            .background(Color(primaryDarkBlue))
     }
     private func copyToClipboard(text: String) {
         UIPasteboard.general.setValue(text,

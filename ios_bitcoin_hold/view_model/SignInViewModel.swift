@@ -2,10 +2,10 @@ import Foundation
 import Combine
 
 class SignInViewModel: ObservableObject{
-    @Published var isUserSignedIn: Bool? = nil
-    var signInFailed: Bool = false
-    let loginService: LoginService
-    var cancellables = Set<AnyCancellable>()
+    @Published private(set) var user: User?
+    @Published private(set) var dontSignedInMessage: String?
+    private let loginService: LoginService
+    private var cancellables = Set<AnyCancellable>()
     
     init(loginService: LoginService){
         self.loginService = loginService
@@ -16,15 +16,17 @@ class SignInViewModel: ObservableObject{
         
         loginService.signIn(credential: userCredential) { [weak self] result in
             switch result {
-            case .success(let value):
+            case .success(let user):
                 DispatchQueue.main.async {
-                    self?.signInFailed = false
-                    self?.isUserSignedIn = value
+                    if(user == nil){
+                        self?.dontSignedInMessage = "User doesn't found"
+                    }else{
+                        self?.user = user
+                    }
                 }
             case .failure(_):
                 DispatchQueue.main.async {
-                    self?.signInFailed = true
-                    self?.isUserSignedIn = false
+                    self?.dontSignedInMessage = "Server error, try again in one hour"
                 }
             }
         }

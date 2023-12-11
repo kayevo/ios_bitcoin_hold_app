@@ -12,7 +12,7 @@ class LoginServiceImpl : LoginService{
         cancellables.removeAll()
     }
     
-    func signIn(credential: UserCredential, completion: @escaping (Result<Bool, Error>) -> Void){
+    func signIn(credential: UserCredential, completion: @escaping (Result<User?, Error>) -> Void){
         let urlString: String = ((secretDictionary?["API_BASE_URL"] as? String) ?? "") + "user/auth"
         let apiKey: String = (secretDictionary?["API_KEY"] as? String) ?? ""
         
@@ -46,11 +46,9 @@ class LoginServiceImpl : LoginService{
                         throw URLError(.badServerResponse)
                     }
                     
-                    if(httpResponse.statusCode == 200){
-                        completion(.success(true))
-                    }else if(httpResponse.statusCode == 404){
-                        completion(.success(false))
-                    }else{
+                    if(httpResponse.statusCode == 404){
+                        completion(.success(nil))
+                    }else if(httpResponse.statusCode == 500){
                         completion(.failure(NetworkError.serverError))
                     }
                     return data
@@ -58,9 +56,7 @@ class LoginServiceImpl : LoginService{
                 .decode(type: User.self, decoder: JSONDecoder())
                 .sink { completion in
                 } receiveValue: { user in
-                    if(user.id.isEmpty){
-                        completion(.failure(NetworkError.serverError))
-                    }
+                    completion(.success(user))
                 }
                 .store(in: &cancellables)
         }catch{

@@ -2,6 +2,7 @@ import SwiftUI
 import Combine
 
 struct PortfolioView: View {
+    let userId: String
     let primaryDarkBlue = UIColor(red: 0.16, green: 0.19, blue: 0.24, alpha: 1)
     let primaryLightBlue = UIColor(red: 0.2, green: 0.24, blue: 0.29, alpha: 1)
     let primaryGreen = UIColor(red: 0.1, green: 0.77, blue: 0.51, alpha: 1)
@@ -10,12 +11,17 @@ struct PortfolioView: View {
     @State var portfolioValue: String = "loading..."
     @State var bitcoinPrice: String = "loading..."
     @State var profits: String = "loading..."
-    @StateObject private var portfolioViewModel = PortfolioViewModel(
-        portfolioService: PortfolioServiceImpl(),
-        analysisService: AnalysisServiceImpl(),
-        userId: "656a47acbf50ef9a4ca89476"
-    )
+    @StateObject var portfolioViewModel: PortfolioViewModel
     private var cancellables = Set<AnyCancellable>()
+    
+    init(userId: String){
+        self.userId = userId
+        self._portfolioViewModel = StateObject(wrappedValue: PortfolioViewModel(
+            portfolioService: PortfolioServiceImpl(),
+            analysisService: AnalysisServiceImpl(),
+            userId: userId
+        ))
+    }
     
     var body: some View {
         NavigationStack {
@@ -99,7 +105,7 @@ struct PortfolioView: View {
             }
             .padding(.horizontal, 50)
             .padding(20)
-            .background(Color(primaryLightBlue))
+            .background(Color(primaryDarkBlue))
             .onReceive(portfolioViewModel.$analysis
                 .compactMap { $0 }, perform: {analysis in
                     self.bitcoinPrice = "\(analysis.bitcoinPriceInBrl.parseToCurrency())"
@@ -116,6 +122,11 @@ struct PortfolioView: View {
     }
 }
 
+let secretDictionary = NSDictionary(
+    contentsOfFile: Bundle.main.path(forResource: "Secret", ofType: "plist") ?? ""
+)
+let mockUserId: String = (secretDictionary?["MOCK_USER_ID"] as? String) ?? ""
+
 #Preview {
-    PortfolioView()
+    PortfolioView(userId: mockUserId)
 }

@@ -150,8 +150,8 @@
 			children = (
 				25ED6F492B23D0360026BBCA /* AnalysisService.swift */,
 				251C98DF2A63360B00DB69BD /* LoginService.swift */,
-				251C98DE2A6335ED00DB69BD /* impl */,
 				25ED6F4E2B23D16E0026BBCA /* PortfolioService.swift */,
+				251C98DE2A6335ED00DB69BD /* impl */,
 			);
 			path = service;
 			sourceTree = "<group>";
