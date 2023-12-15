@@ -35,7 +35,7 @@ class LoginServiceImpl : LoginService{
         
         var request = URLRequest(url: urlWithParameters)
         request.httpMethod = "GET"
-        request.addValue(apiKey, forHTTPHeaderField: "api_key") // Insert the value into the header
+        request.addValue(apiKey, forHTTPHeaderField: "api_key") 
         
         do{
             URLSession.shared.dataTaskPublisher(for: request)
@@ -87,15 +87,13 @@ class LoginServiceImpl : LoginService{
         
         var request = URLRequest(url: urlWithParameters)
         request.httpMethod = "POST"
-        request.addValue(apiKey, forHTTPHeaderField: "api_key") // Insert the value into the header
+        request.addValue(apiKey, forHTTPHeaderField: "api_key") 
         
         do{
             URLSession.shared.dataTaskPublisher(for: request)
                 .subscribe(on: DispatchQueue.global(qos: .background))
                 .receive(on: DispatchQueue.main)
                 .tryMap { element in
-                    print("Data: ", element.data)
-                    print("Response: ", element.response)
                     guard let httpResponse = element.response as? HTTPURLResponse else {
                         throw URLError(.badServerResponse)
                     }

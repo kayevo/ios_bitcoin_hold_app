@@ -34,7 +34,7 @@ class AnalysisServiceImpl : AnalysisService{
         
         var request = URLRequest(url: urlWithParameters)
         request.httpMethod = "GET"
-        request.addValue(apiKey, forHTTPHeaderField: "api_key") // Insert the value into the header
+        request.addValue(apiKey, forHTTPHeaderField: "api_key") 
         
         do{
             URLSession.shared.dataTaskPublisher(for: request)

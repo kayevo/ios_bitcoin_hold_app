@@ -28,7 +28,7 @@ struct SignInView: View {
                         TextField("E-mail", text: $email)
                             .autocapitalization(.none)
                             .onChange(of: email) { newEmail in
-                                if(UserCredential.validateEmail(email: newEmail)){
+                                if(newEmail.validateEmail()){
                                     hintEmail = "Valid e-mail"
                                 }else{
                                     hintEmail = "Invalid e-mail"
@@ -40,7 +40,7 @@ struct SignInView: View {
                         }
                         SecureField("Password", text: $password)
                             .onChange(of: password) { newPassword in
-                                if(UserCredential.validatePassword(password: newPassword)){
+                                if(newPassword.validatePassword()){
                                     hintPassword = "Valid password"
                                 }else{
                                     hintPassword = "Invalid password"
@@ -69,7 +69,7 @@ struct SignInView: View {
                     }) {
                         Text("Sign in")
                             .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
-                            .padding(.vertical)
+                            .padding(.vertical, 10)
                             .background(Color(primaryGreen))
                             .foregroundColor(Color(primaryLightBlue))
                             .cornerRadius(10)

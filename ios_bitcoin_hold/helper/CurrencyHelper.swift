@@ -25,7 +25,21 @@ extension String {
     func parseCurrencyToDouble() -> Double {
         return Double(self.replacingOccurrences(of: ",", with: "")) ?? 0.0
     }
+    
+    func validateNumber() -> Bool{
+        guard !self.isEmpty else {
+            return false
+        }
+        
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.locale = Locale(identifier: "en_US")
+        
+        return (formatter.number(from: self) != nil) && !self.hasPrefix(".") && !self.hasSuffix(".")
+    }
 }
+
+
 
 extension Double {
     func parseToCurrency() -> String {
@@ -42,8 +56,8 @@ extension Double {
     }
 
     func parseToPercentage() -> String {
-        let percentageSymbol = self >= 0 ? "+" : ""
-        return "\(percentageSymbol) \(self.parseToCurrency()) %"
+        let percentageSymbol = self >= 0 ? "+" : "-"
+        return "\(percentageSymbol) \(abs(self).parseToCurrency()) %"
     }
 
     func parseToBRLCurrency() -> String {

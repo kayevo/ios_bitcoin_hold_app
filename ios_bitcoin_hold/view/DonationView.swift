@@ -25,7 +25,7 @@ struct DonationView: View {
                 label: {
                     Text("Copy lightning address")
                         .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
-                        .padding(.vertical)
+                        .padding(.vertical, 10)
                         .background(Color(primaryGreen))
                         .foregroundColor(Color(primaryLightBlue))
                         .cornerRadius(10)
@@ -45,7 +45,7 @@ struct DonationView: View {
                 label: {
                     Text("Copy bitcoin address")
                         .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
-                        .padding(.vertical)
+                        .padding(.vertical, 10)
                         .background(Color(primaryGreen))
                         .foregroundColor(Color(primaryLightBlue))
                         .cornerRadius(10)

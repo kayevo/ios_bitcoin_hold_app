@@ -16,6 +16,7 @@
 		251C98E02A63360B00DB69BD /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251C98DF2A63360B00DB69BD /* LoginService.swift */; };
 		251C98E22A63362E00DB69BD /* LoginServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251C98E12A63362E00DB69BD /* LoginServiceImpl.swift */; };
 		251C98E62A63467300DB69BD /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251C98E52A63467300DB69BD /* SignInViewModel.swift */; };
+		2523E4BF2B2B88EF0013E0B8 /* RemoveAmountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2523E4BE2B2B88EF0013E0B8 /* RemoveAmountViewModel.swift */; };
 		253468182B10F22000308AAF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253468172B10F22000308AAF /* User.swift */; };
 		254A1C652B056A340068A11A /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254A1C642B056A340068A11A /* SignUpView.swift */; };
 		254A1C672B056A690068A11A /* PortfolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254A1C662B056A690068A11A /* PortfolioView.swift */; };
@@ -26,6 +27,10 @@
 		256764DC2A3E6E8000CE4AE5 /* ios_bitcoin_holdUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256764DB2A3E6E8000CE4AE5 /* ios_bitcoin_holdUITests.swift */; };
 		256764DE2A3E6E8000CE4AE5 /* ios_bitcoin_holdUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256764DD2A3E6E8000CE4AE5 /* ios_bitcoin_holdUITestsLaunchTests.swift */; };
 		25724BF72A79D788008B790E /* SignInViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25724BF62A79D788008B790E /* SignInViewModelTest.swift */; };
+		25B630FF2B29DD4700B386F9 /* AddAmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B630FE2B29DD4700B386F9 /* AddAmountView.swift */; };
+		25B631012B29E4E500B386F9 /* RemoveAmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B631002B29E4E500B386F9 /* RemoveAmountView.swift */; };
+		25B631032B2A01BE00B386F9 /* AddAmountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B631022B2A01BE00B386F9 /* AddAmountViewModel.swift */; };
+		25B631052B2A1A9D00B386F9 /* CredentialHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B631042B2A1A9D00B386F9 /* CredentialHelper.swift */; };
 		25BAC9712B1E51350066BB57 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BAC9702B1E51350066BB57 /* MockURLProtocol.swift */; };
 		25BAC9732B1E51830066BB57 /* MockLoginServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BAC9722B1E51830066BB57 /* MockLoginServiceImpl.swift */; };
 		25CB715D2B0D21A000520EC4 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CB715C2B0D21A000520EC4 /* SignUpViewModel.swift */; };
@@ -69,6 +74,7 @@
 		251C98DF2A63360B00DB69BD /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		251C98E12A63362E00DB69BD /* LoginServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginServiceImpl.swift; sourceTree = "<group>"; };
 		251C98E52A63467300DB69BD /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		2523E4BE2B2B88EF0013E0B8 /* RemoveAmountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveAmountViewModel.swift; sourceTree = "<group>"; };
 		253468172B10F22000308AAF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		254A1C642B056A340068A11A /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		254A1C662B056A690068A11A /* PortfolioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioView.swift; sourceTree = "<group>"; };
@@ -83,6 +89,10 @@
 		256764DD2A3E6E8000CE4AE5 /* ios_bitcoin_holdUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_bitcoin_holdUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		25724BF62A79D788008B790E /* SignInViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModelTest.swift; sourceTree = "<group>"; };
 		258FF0AD2B0F949B0032463D /* Secret.exemple.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secret.exemple.plist; sourceTree = "<group>"; };
+		25B630FE2B29DD4700B386F9 /* AddAmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAmountView.swift; sourceTree = "<group>"; };
+		25B631002B29E4E500B386F9 /* RemoveAmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveAmountView.swift; sourceTree = "<group>"; };
+		25B631022B2A01BE00B386F9 /* AddAmountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAmountViewModel.swift; sourceTree = "<group>"; };
+		25B631042B2A1A9D00B386F9 /* CredentialHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialHelper.swift; sourceTree = "<group>"; };
 		25BAC9702B1E51350066BB57 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		25BAC9722B1E51830066BB57 /* MockLoginServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginServiceImpl.swift; sourceTree = "<group>"; };
 		25CB715C2B0D21A000520EC4 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -172,6 +182,8 @@
 				251C98E52A63467300DB69BD /* SignInViewModel.swift */,
 				25CB715C2B0D21A000520EC4 /* SignUpViewModel.swift */,
 				25ED6F5E2B23D5220026BBCA /* PortfolioViewModel.swift */,
+				25B631022B2A01BE00B386F9 /* AddAmountViewModel.swift */,
+				2523E4BE2B2B88EF0013E0B8 /* RemoveAmountViewModel.swift */,
 			);
 			path = view_model;
 			sourceTree = "<group>";
@@ -183,6 +195,8 @@
 				254A1C642B056A340068A11A /* SignUpView.swift */,
 				254A1C662B056A690068A11A /* PortfolioView.swift */,
 				2518FE0F2B24A95B00086AF8 /* DonationView.swift */,
+				25B630FE2B29DD4700B386F9 /* AddAmountView.swift */,
+				25B631002B29E4E500B386F9 /* RemoveAmountView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -284,6 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				25ED6F4C2B23D0E20026BBCA /* CurrencyHelper.swift */,
+				25B631042B2A1A9D00B386F9 /* CredentialHelper.swift */,
 			);
 			path = helper;
 			sourceTree = "<group>";
@@ -550,11 +565,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25B631032B2A01BE00B386F9 /* AddAmountViewModel.swift in Sources */,
 				25ED6F5D2B23D4BD0026BBCA /* PortfolioServiceImpl.swift in Sources */,
 				251C98E22A63362E00DB69BD /* LoginServiceImpl.swift in Sources */,
+				25B631052B2A1A9D00B386F9 /* CredentialHelper.swift in Sources */,
 				25ED6F512B23D1AB0026BBCA /* AnalysisServiceImpl.swift in Sources */,
 				25ED6F4A2B23D0360026BBCA /* AnalysisService.swift in Sources */,
 				251C98E02A63360B00DB69BD /* LoginService.swift in Sources */,
+				2523E4BF2B2B88EF0013E0B8 /* RemoveAmountViewModel.swift in Sources */,
+				25B631012B29E4E500B386F9 /* RemoveAmountView.swift in Sources */,
 				251C98E62A63467300DB69BD /* SignInViewModel.swift in Sources */,
 				25ED6F572B23D2800026BBCA /* Analysis.swift in Sources */,
 				254A1C652B056A340068A11A /* SignUpView.swift in Sources */,
@@ -562,6 +581,7 @@
 				25ED6F552B23D2620026BBCA /* Portfolio.swift in Sources */,
 				256764C32A3E6E7E00CE4AE5 /* SignInView.swift in Sources */,
 				25ED6F5F2B23D5220026BBCA /* PortfolioViewModel.swift in Sources */,
+				25B630FF2B29DD4700B386F9 /* AddAmountView.swift in Sources */,
 				251C98D92A63346800DB69BD /* UserCredential.swift in Sources */,
 				256764C12A3E6E7E00CE4AE5 /* ios_bitcoin_holdApp.swift in Sources */,
 				253468182B10F22000308AAF /* User.swift in Sources */,
