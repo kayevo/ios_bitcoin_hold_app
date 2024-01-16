@@ -149,7 +149,7 @@ class PortfolioServiceImpl : PortfolioService{
                 .decode(type: Portfolio.self, decoder: JSONDecoder())
                 .sink { completion in
                 } receiveValue: { portfolioAmount in
-                    if(portfolioAmount.bitcoinAveragePrice.isNaN){
+                    if(portfolioAmount.averagePrice.isNaN){
                         completion(.failure(NetworkError.serverError))
                     }else{
                         completion(.success(portfolioAmount))
@@ -160,4 +160,53 @@ class PortfolioServiceImpl : PortfolioService{
             completion(.failure(NetworkError.serverError))
         }
     }
+    
+func setPortfolio(userId: String, amount: Int64, totalPaidValue: Double, completion: @escaping (Result<Void, Error>) -> Void) {
+        let urlString: String = ((secretDictionary?["API_BASE_URL"] as? String) ?? "") + "portfolio/customize"
+        let apiKey: String = (secretDictionary?["API_KEY"] as? String) ?? ""
+        
+        guard let url = URL(string: urlString) else {
+            completion(.failure(NetworkError.invalidURL))
+            return
+        }
+        
+        var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
+        
+        components?.queryItems = [
+            URLQueryItem(name: "userId", value: userId),
+            URLQueryItem(name: "amount", value: String(amount)),
+            URLQueryItem(name: "totalPaidValue", value: String(totalPaidValue)),
+        ]
+        
+        guard let urlWithParameters = components?.url else {
+            completion(.failure(NetworkError.invalidURL))
+            return
+        }
+        
+        var request = URLRequest(url: urlWithParameters)
+        request.httpMethod = "POST"
+        request.addValue(apiKey, forHTTPHeaderField: "api_key")
+        
+        do{
+            URLSession.shared.dataTaskPublisher(for: request)
+                .subscribe(on: DispatchQueue.global(qos: .background))
+                .receive(on: DispatchQueue.main)
+                .tryMap { element in
+                    guard let httpResponse = element.response as? HTTPURLResponse else {
+                        throw URLError(.badServerResponse)
+                    }
+                    
+                    if(httpResponse.statusCode == 200){
+                        completion(.success(()))
+                    }else{
+                        completion(.failure(NetworkError.serverError))
+                    }
+                }
+                .sink { completion in } receiveValue: { value in }
+                .store(in: &cancellables)
+        }catch{
+            completion(.failure(NetworkError.serverError))
+        }
+    }
+    
 }

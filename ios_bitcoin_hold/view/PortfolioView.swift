@@ -6,12 +6,12 @@ struct PortfolioView: View {
     let primaryDarkBlue = UIColor(red: 0.16, green: 0.19, blue: 0.24, alpha: 1)
     let primaryLightBlue = UIColor(red: 0.2, green: 0.24, blue: 0.29, alpha: 1)
     let primaryGreen = UIColor(red: 0.1, green: 0.77, blue: 0.51, alpha: 1)
-    @State var bitcoins: String = "loading..."
-    @State var totalPaid: String = "loading..."
+    @State var amount: String = "loading..."
+    @State var totalPaidValue: String = "loading..."
     @State var averagePrice: String = "loading..."
-    @State var portfolioValue: String = "loading..."
+    @State var amountValue: String = "loading..."
     @State var bitcoinPrice: String = "loading..."
-    @State var profits: String = "loading..."
+    @State var profits: String = "loading..." 
     @StateObject var viewModel: PortfolioViewModel
     private var cancellables = Set<AnyCancellable>()
     let secretDictionary = NSDictionary(
@@ -50,7 +50,7 @@ struct PortfolioView: View {
                                         Label("Donations", systemImage: "creditcard")
                                     })
                                     NavigationLink(destination: {
-                                        // TODO add customize view, dont do modal
+                                        CustomizeAmountView(portfolioViewModel: viewModel)
                                     }, label: {
                                         Label("Customize portfolio amount", systemImage: "square.and.pencil")
                                     })
@@ -77,14 +77,14 @@ struct PortfolioView: View {
                         Text("Bitcoins:")
                             .foregroundColor(.white)
                         Spacer()
-                        Text(bitcoins)
+                        Text(amount)
                             .foregroundColor(.white)
                     }
                     HStack {
                         Text("Total paid:")
                             .foregroundColor(.white)
                         Spacer()
-                        Text(totalPaid)
+                        Text(totalPaidValue)
                             .foregroundColor(.white)
                     }
                     HStack {
@@ -109,7 +109,7 @@ struct PortfolioView: View {
                         Text("Portfolio value:")
                             .foregroundColor(.white)
                         Spacer()
-                        Text(portfolioValue)
+                        Text(amountValue)
                             .foregroundColor(.white)
                     }
                     HStack {
@@ -152,15 +152,15 @@ struct PortfolioView: View {
                 .onReceive(viewModel.$analysis
                     .compactMap { $0 }, perform: {analysis in
                         self.bitcoinPrice = "\(analysis.bitcoinPriceInBrl.parseToCurrency())"
-                        self.portfolioValue = "\(analysis.portfolioValue.parseToCurrency())"
+                        self.amountValue = "\(analysis.amountValue.parseToCurrency())"
                         self.profits = "\(analysis.profits.parseToPercentage())"
                     }
                 )
                 .onReceive(viewModel.$portfolioAmount
                     .compactMap { $0 }, perform: {portfolioAmount in
-                        self.bitcoins = "\(portfolioAmount.satoshiAmount.parseSatoshiToBitcoin())"
-                        self.totalPaid = "\(portfolioAmount.totalPaidValue.parseToCurrency())"
-                        self.averagePrice = "\(portfolioAmount.bitcoinAveragePrice.parseToCurrency())"
+                        self.amount = "\(portfolioAmount.amount.parseSatoshiToBitcoin())"
+                        self.totalPaidValue = "\(portfolioAmount.totalPaidValue.parseToCurrency())"
+                        self.averagePrice = "\(portfolioAmount.averagePrice.parseToCurrency())"
                     })
                 .alert(
                     "Support email",
