@@ -6,7 +6,7 @@ struct RemoveAmountView: View {
     @State var hintAmount: String = ""
     @State var receivedValue: String = ""
     @State var hintReceivedValue: String = ""
-    @StateObject var viewModel = RemoveAmountViewModel(portfolioService: PortfolioServiceImpl())
+    @StateObject var viewModel = RemoveAmountViewModel(service: PortfolioServiceImpl())
     @Environment(\.presentationMode) var presentationMode
     @State var isLoadding = false
     

@@ -6,7 +6,7 @@ struct AddAmountView: View {
     @State var hintAmount: String = ""
     @State var paidValue: String = ""
     @State var hintPaidValue: String = ""
-    @StateObject var viewModel = AddAmountViewModel(portfolioService: PortfolioServiceImpl())
+    @StateObject var viewModel = AddAmountViewModel(service: PortfolioServiceImpl())
     @Environment(\.presentationMode) var presentationMode
     @State var isLoadding = false
     
@@ -96,7 +96,6 @@ struct AddView_Previews: PreviewProvider {
     )
 
     static var previews: some View {
-        AddAmountView(portfolioViewModel: portfolioViewModel)
-    }
+        AddAmountView(portfolioViewModel: portfolioViewModel)     }
 }
 

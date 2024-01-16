@@ -3,14 +3,14 @@ import Foundation
 class RemoveAmountViewModel: ObservableObject{
     @Published var isAmountRemoved: Bool?
     @Published var dontRemovedMessage: String?
-    let portfolioService: PortfolioService
+    let service: PortfolioService
     
-    init(portfolioService: PortfolioService) {
-        self.portfolioService = portfolioService
+    init(service: PortfolioService) {
+        self.service = service
     }
     
     func removeAmount(userId: String, amount: Int64, receivedValue: Double){
-        portfolioService.removeAmount(
+        service.removeAmount(
             userId: userId,
             amount: amount,
             receivedValue: receivedValue,

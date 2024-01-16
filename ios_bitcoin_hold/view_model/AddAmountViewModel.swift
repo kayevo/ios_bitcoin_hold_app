@@ -3,14 +3,14 @@ import Foundation
 class AddAmountViewModel: ObservableObject{
     @Published var isAmountAdded: Bool?
     @Published var dontAddedMessage: String?
-    let portfolioService: PortfolioService
+    let service: PortfolioService
     
-    init(portfolioService: PortfolioService) {
-        self.portfolioService = portfolioService
+    init(service: PortfolioService) {
+        self.service = service
     }
     
     func addAmount(userId: String, amount: Int64, paidValue: Double){
-        portfolioService.addAmount(userId: userId, amount: amount, paidValue: paidValue,
+        service.addAmount(userId: userId, amount: amount, paidValue: paidValue,
                              completion: { [weak self] result in
             switch result {
             case .success(_):

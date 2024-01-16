@@ -27,6 +27,8 @@
 		256764DC2A3E6E8000CE4AE5 /* ios_bitcoin_holdUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256764DB2A3E6E8000CE4AE5 /* ios_bitcoin_holdUITests.swift */; };
 		256764DE2A3E6E8000CE4AE5 /* ios_bitcoin_holdUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256764DD2A3E6E8000CE4AE5 /* ios_bitcoin_holdUITestsLaunchTests.swift */; };
 		25724BF72A79D788008B790E /* SignInViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25724BF62A79D788008B790E /* SignInViewModelTest.swift */; };
+		2572D3292B30E74B0089F692 /* CustomizeAmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2572D3282B30E74B0089F692 /* CustomizeAmountView.swift */; };
+		2572D32B2B30E8060089F692 /* CustomizeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2572D32A2B30E8060089F692 /* CustomizeViewModel.swift */; };
 		25B630FF2B29DD4700B386F9 /* AddAmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B630FE2B29DD4700B386F9 /* AddAmountView.swift */; };
 		25B631012B29E4E500B386F9 /* RemoveAmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B631002B29E4E500B386F9 /* RemoveAmountView.swift */; };
 		25B631032B2A01BE00B386F9 /* AddAmountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B631022B2A01BE00B386F9 /* AddAmountViewModel.swift */; };
@@ -88,6 +90,8 @@
 		256764DB2A3E6E8000CE4AE5 /* ios_bitcoin_holdUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_bitcoin_holdUITests.swift; sourceTree = "<group>"; };
 		256764DD2A3E6E8000CE4AE5 /* ios_bitcoin_holdUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_bitcoin_holdUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		25724BF62A79D788008B790E /* SignInViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModelTest.swift; sourceTree = "<group>"; };
+		2572D3282B30E74B0089F692 /* CustomizeAmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeAmountView.swift; sourceTree = "<group>"; };
+		2572D32A2B30E8060089F692 /* CustomizeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeViewModel.swift; sourceTree = "<group>"; };
 		258FF0AD2B0F949B0032463D /* Secret.exemple.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secret.exemple.plist; sourceTree = "<group>"; };
 		25B630FE2B29DD4700B386F9 /* AddAmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAmountView.swift; sourceTree = "<group>"; };
 		25B631002B29E4E500B386F9 /* RemoveAmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveAmountView.swift; sourceTree = "<group>"; };
@@ -96,6 +100,7 @@
 		25BAC9702B1E51350066BB57 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		25BAC9722B1E51830066BB57 /* MockLoginServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginServiceImpl.swift; sourceTree = "<group>"; };
 		25CB715C2B0D21A000520EC4 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		25E64F462B45CB5B00C6DF33 /* ios_bitcoin_hold.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ios_bitcoin_hold.entitlements; sourceTree = "<group>"; };
 		25ED6F492B23D0360026BBCA /* AnalysisService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisService.swift; sourceTree = "<group>"; };
 		25ED6F4C2B23D0E20026BBCA /* CurrencyHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyHelper.swift; sourceTree = "<group>"; };
 		25ED6F4E2B23D16E0026BBCA /* PortfolioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioService.swift; sourceTree = "<group>"; };
@@ -184,6 +189,7 @@
 				25ED6F5E2B23D5220026BBCA /* PortfolioViewModel.swift */,
 				25B631022B2A01BE00B386F9 /* AddAmountViewModel.swift */,
 				2523E4BE2B2B88EF0013E0B8 /* RemoveAmountViewModel.swift */,
+				2572D32A2B30E8060089F692 /* CustomizeViewModel.swift */,
 			);
 			path = view_model;
 			sourceTree = "<group>";
@@ -197,6 +203,7 @@
 				2518FE0F2B24A95B00086AF8 /* DonationView.swift */,
 				25B630FE2B29DD4700B386F9 /* AddAmountView.swift */,
 				25B631002B29E4E500B386F9 /* RemoveAmountView.swift */,
+				2572D3282B30E74B0089F692 /* CustomizeAmountView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -226,6 +233,7 @@
 		256764BF2A3E6E7E00CE4AE5 /* ios_bitcoin_hold */ = {
 			isa = PBXGroup;
 			children = (
+				25E64F462B45CB5B00C6DF33 /* ios_bitcoin_hold.entitlements */,
 				25ED6F4B2B23D0AB0026BBCA /* helper */,
 				254A1C632B0569E20068A11A /* view */,
 				251C98E42A63462200DB69BD /* view_model */,
@@ -577,6 +585,7 @@
 				251C98E62A63467300DB69BD /* SignInViewModel.swift in Sources */,
 				25ED6F572B23D2800026BBCA /* Analysis.swift in Sources */,
 				254A1C652B056A340068A11A /* SignUpView.swift in Sources */,
+				2572D32B2B30E8060089F692 /* CustomizeViewModel.swift in Sources */,
 				25CB715D2B0D21A000520EC4 /* SignUpViewModel.swift in Sources */,
 				25ED6F552B23D2620026BBCA /* Portfolio.swift in Sources */,
 				256764C32A3E6E7E00CE4AE5 /* SignInView.swift in Sources */,
@@ -586,6 +595,7 @@
 				256764C12A3E6E7E00CE4AE5 /* ios_bitcoin_holdApp.swift in Sources */,
 				253468182B10F22000308AAF /* User.swift in Sources */,
 				25ED6F4D2B23D0E20026BBCA /* CurrencyHelper.swift in Sources */,
+				2572D3292B30E74B0089F692 /* CustomizeAmountView.swift in Sources */,
 				25ED6F4F2B23D16E0026BBCA /* PortfolioService.swift in Sources */,
 				254A1C672B056A690068A11A /* PortfolioView.swift in Sources */,
 				2518FE102B24A95B00086AF8 /* DonationView.swift in Sources */,
@@ -752,6 +762,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ios_bitcoin_hold/ios_bitcoin_hold.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ios_bitcoin_hold/Preview Content\"";
@@ -781,6 +792,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ios_bitcoin_hold/ios_bitcoin_hold.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ios_bitcoin_hold/Preview Content\"";

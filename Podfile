@@ -4,8 +4,8 @@ platform :ios, '16.4'
 target 'ios_bitcoin_hold' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-
-  # Pods for ios_bitcoin_hold
+  
+  # Keychain
   pod 'KeychainSwift', '~> 19.0'
 
   target 'ios_bitcoin_holdTests' do
