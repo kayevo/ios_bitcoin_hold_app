@@ -114,6 +114,3 @@ Secret.plist
 # MacOS
 .DS_Store
 **/.DS_Store
-
-# Main view
-**/ios_bitcoin_holdApp.swift
