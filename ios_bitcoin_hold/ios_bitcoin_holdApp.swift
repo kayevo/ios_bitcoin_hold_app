@@ -2,10 +2,11 @@ import SwiftUI
 
 @main
 struct ios_bitcoin_holdApp: App {
+    let mockUserId = (secretDictionary?["MOCK_USER_ID"] as? String) ?? ""
     var body: some Scene {
         WindowGroup {     
-            // TODO insert sign in view
-            SignInView()
+            // TODO insert main view
+            AdsView()
         }
     }
 }

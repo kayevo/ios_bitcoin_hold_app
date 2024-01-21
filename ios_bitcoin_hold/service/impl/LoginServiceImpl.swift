@@ -118,4 +118,5 @@ enum NetworkError: Error{
     case invalidURL
     case invalidResponse
     case serverError
+    case serviceError
 }
