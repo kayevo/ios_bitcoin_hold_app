@@ -13,24 +13,24 @@ final class UserCredentialTest: XCTestCase {
 
     func testGivenValidEmailShouldReturnTrueWhenValidateEmail() throws {
         let validEmail = "email@email.com"
-        XCTAssertTrue(UserCredential.validateEmail(email: validEmail))
+        XCTAssertTrue(validEmail.validateEmail(email: validEmail))
     }
 
     func testGivenInvalidEmailShouldReturnFalseWhenValidateEmail() throws {
         let invalidEmail = "e"
-        XCTAssertFalse(UserCredential.validateEmail(email: invalidEmail))
+        XCTAssertFalse(invalidEmail.validateEmail(email: invalidEmail))
     }
     
     func testGivenStrongPasswordShouldReturnTrueWhenValidatePassword() throws {
         // Strong password: at least 5 characters and one special character
         let strongPassword = "password@"
-        XCTAssertTrue(UserCredential.validatePassword(password: strongPassword))
+        XCTAssertTrue(strongPassword.validatePassword(password: strongPassword))
     }
 
     
     func testGivenWeakPasswordShouldReturnFalseWhenValidatePassword() throws {
         // Strong password: at least 5 characters and one special character
         let weakPassword = "p"
-        XCTAssertFalse(UserCredential.validatePassword(password: weakPassword))
+        XCTAssertFalse(weakPassword.validatePassword(password: weakPassword))
     }
 }
